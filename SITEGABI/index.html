@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Explicação</title>
+        <link href="./style.css" rel="stylesheet" type="text/css" />
+        <script src="funcao.js"></script>
+    </head>
+
+    <body>
+      <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<!--1--->
+<div class="accordion__content">
+  <h2>Explicação❤</h2>
+
+  <div class="accordion__item">
+    <header class="item__header">
+      <h4 class="item__question">
+        if-ELSE
+      </h4>
+      <div class="item__icon">
+        <i class='bx bx-chevron-down'></i>
+      </div>
+    </header>
+    <div class="item__content">
+      <p class="item__answer">
+        <p>
+          A estrutura if-else é condicional e é usada para tomar decisões com base em uma condição estabelecida.
+          <br />Neste exemplo abaixo, o programa solicita a idade do usuário e, com base na idade fornecida, decide se o usuário é maior ou menor de idade.:
+        </p>
+        
+        
+      </p>
+      <p class="item__answer">
+<pre>
+<strong>#include &lt;stdio.h&gt;</strong>
+          
+<strong>int main()</strong>
+<strong>{</strong>
+    <strong>int idade;</strong> // Declaração de uma variável 'idade' para armazenar a idade
+                  do usuário.
+
+    <strong>printf("Digite sua idade: ");</strong> // Exibe uma mensagem solicitando que o
+                                     usuário digite sua idade
+    <strong>scanf("%d", &idade);</strong> // Lê a idade fornecida pelo usuário e a armazena
+                            na variável 'idade'
+
+    <strong>if (idade >= 18)</strong> // Início de uma estrutura condicional 'if', verifica
+                        se a idade é maior ou igual a 18.
+    <strong>{</strong>
+        <strong>printf("Você é maior de idade.\n");</strong> // Se a condição for verdadeira,
+                                               exibe a mensagem de que o
+                                               usuário é maior de idade.
+    <strong>}</strong>
+    <strong>else</strong> // Caso a condição do 'if' seja falsa
+    <strong>{</strong>
+        <strong>printf("Você é menor de idade.\n");</strong> // Exibe a mensagem de que o 
+                                               usuário é menor de idade.
+    <strong>}</strong>
+
+    <strong>return 0; </strong>// Retorna 0 para indicar que o programa foi concluído com
+                 sucesso.
+<strong>}</strong>
+</pre></p>
+    </div>
+  </div>
+  <div class="accordion__item">
+    <header class="item__header">
+      <h4 class="item__question">
+        Switch-CASE
+      </h4>
+      <div class="item__icon">
+        <i class='bx bx-chevron-down'></i>
+      </div>
+    </header>
+    <div class="item__content">
+      <p class="item__answer">
+        A estrutura switch-case é usada para selecionar uma ação com base no valor de uma expressão.
+<br />Neste exemplo abaixo, o programa permite que o usuário escolha uma opção e, com base na escolha, executa o código associado a essa opção.
+      </p>
+      <p class="item__answer">
+<pre>
+<strong>#include <stdio.h></strong>
+
+<strong>int main()</strong>
+<strong>{</strong>
+    <strong>char opcao; </strong> // Declaração de uma variável 'opcao' para armazenar
+                   a escolha do usuário
+
+    <strong>printf("Escolha uma opção (A, B, C, ou D): ");</strong> // Exibe uma 
+    mensagem solicitando que o usuário escolha uma opção
+    <strong>scanf(" %c", &opcao);</strong> // Lê a escolha do usuário (um 
+    caractere) e a armazena na variável 'opcao'
+
+    <strong>switch (opcao)</strong> // Início de uma estrutura de seleção 'switch'
+                      com base no valor da variável 'opcao'
+    <strong>{</strong>
+    <strong>case 'A':</strong> // Se a 'opcao' for igual a 'A', execute o seguinte
+                 bloco de código:
+        <strong>printf("Você escolheu a opção A.\n"); </strong> // Exibe a mensagem
+      indicando que o usuário escolheu a opção 'A'
+        <strong>break; </strong>// Sai da estrutura 'switch'
+    <strong>case 'B':</strong>// Se a 'opcao' for igual a 'B', execute o seguinte
+      bloco de código:
+        <strong>printf("Você escolheu a opção B.\n");</strong> // Exibe a mensagem
+      indicando que o usuário escolheu a opção 'B'
+        <strong>break; </strong>// Sai da estrutura 'switch'
+    <strong>case 'C':</strong> // Se a 'opcao' for igual a 'C', execute o seguinte
+     bloco de código:
+        <strong>printf("Você escolheu a opção C.\n");</strong> // Exibe a mensagem
+      indicando que o usuário escolheu a opção 'C'
+        <strong>break;</strong> // Sai da estrutura 'switch'
+    <strong>case 'D':</strong> // Se a 'opcao' for igual a 'D', execute o seguinte
+     bloco de código:
+        <strong>printf("Você escolheu a opção D.\n");</strong> // Exibe a mensagem
+      indicando que o usuário escolheu a opção 'D'
+        <strong>break; </strong>// Sai da estrutura 'switch'
+
+    <strong>default:</strong> // Se a 'opcao' não corresponder a nenhuma das opções
+      anteriores, execute o seguinte bloco de código:
+        <strong>printf("Opção inválida.\n");</strong> // Exibe a mensagem indicando
+      que a opção é inválida
+    <strong>}</strong>
+
+    <strong>return 0; </strong>// Retorna 0 para indicar que o programa foi concluído
+    com sucesso.
+<strong>}</strong>
+</pre>
+      </p>
+    </div>
+  </div>
+  <div class="accordion__item">
+    <header class="item__header">
+      <h4 class="item__question">
+while      </h4>
+      <div class="item__icon">
+        <i class='bx bx-chevron-down'></i>
+      </div>
+    </header>
+    <div class="item__content">
+      <p class="item__answer">
+       A estrutura de repetição while é usada para executar um bloco de código repetidamente enquanto uma condição é verdadeira.
+      <br />Neste exemplo abaixo, o programa faz uma contagem de 1 a 5 usando um loop while. O bloco de código dentro do while é executado enquanto a condição contador <= 5 for verdadeira.      </p>
+      <p class="item__answer">
+<pre>
+  <strong>#include <stdio.h></strong>
+
+    <Strong>int main()</Strong>
+    <strong>{</strong>
+        <strong>int contador = 1;</strong> // Declaração de uma variável 'contador' e
+         inicialização com o valor 1
+    
+        <strong>while (contador <= 5)</strong> // Início de um loop 'while', que continuará
+        enquanto a condição (contador <= 5) for verdadeira
+        <strong>{</strong>
+            <strong>printf("Contagem: %d\n", contador);</strong> // Exibe a mensagem com o
+            valor atual de 'contador'
+            <strong>contador++;</strong> // Incrementa o valor de 'contador' em 1 unidade
+        <strong>}</strong>
+    
+        <strong>return 0;</strong> // Retorna 0 para indicar que o programa foi concluído
+        com sucesso.
+    <strong>}</strong>
+</pre>
+      </p>
+    </div>
+  </div>
+  <div class="accordion__item">
+    <header class="item__header">
+      <h4 class="item__question">
+        for
+      </h4>
+      <div class="item__icon">
+        <i class='bx bx-chevron-down'></i>
+      </div>
+    </header>
+    <div class="item__content">
+      <p class="item__answer">
+        <p>
+      A estrutura de repetição "for" é usada para executar um bloco de código dde um número específico de vezes.
+<br />Neste exemplo abaixo, o programa realiza a mesma contagem de 1 a 5, mas utiliza um loop for para controlar a iteração. A estrutura for é composta por três partes: a inicialização (int i = 1), a condição de continuação (i <= 5), e a expressão de incremento (i++). O bloco de código dentro do for é executado repetidamente enquanto a condição for verdadeira.
+        </p>
+
+        
+      </p>
+<pre>
+  <strong>#include <stdio.h></strong>
+  
+    <strong>int main()</strong>
+    <strong>{</strong>
+        <strong>for (int i = 1; i <= 5; i++)</strong> // Início de um loop 'for' com a
+       inicialização (int i = 1), condição (i <= 5) e expressão de incremento (i++)
+        <strong>{</strong>
+            <Strong>printf("Contagem: %d\n", i);</Strong> // Exibe a mensagem com o valor
+            atual de 'i'
+        <strong>}</strong>
+    
+        <strong>return 0;</strong> // Retorna 0 para indicar que o programa foi concluído
+        com sucesso.
+    <strong>}</strong>
+  </pre>
+
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  const accordionItems = document.querySelectorAll('.accordion__item');
+
+  accordionItems.forEach(item => {
+      const header = item.querySelector('.item__header');
+
+      header.addEventListener('click', () => {
+          item.classList.toggle('active');
+          const content = item.querySelector('.item__content');
+
+          if (item.classList.contains('active')) {
+              content.style.maxHeight = content.scrollHeight + 'px';
+          } else {
+              content.style.maxHeight = null;
+          }
+      });
+  });
+</script>
+    </body>
+</html>
