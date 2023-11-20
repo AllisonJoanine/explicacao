@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/acaosocial-logo-redonda.png" type="image/x-icon">
+    <link rel="stylesheet" href="formulario.css"/>
+    <script src="https://kit.fontawesome.com/660b49c444.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/fontbootstrap-icons.css">
+    <title>A Caridade Não Espera | Ação Social</title>
+  </head>
+
+    <header class="cabecalho">
+      <div class="pri-section">
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="../img/acaosocial-logo-redonda.png" alt="logo">
+        </div> <!-- logo -->
+        <!-- MENU -->
+        <div class="menu">
+            <a href="../home/index.html" >Home</a>
+            <a href="../info/quem-somos.html">Quem Somos</a>
+            <a href="../photos/fotos.html">Fotos</a>
+            <a href="../donation/doe.html">Doe</a>
+            <a class="btn-menu" href="../fom/formulario.html">Seja Voluntário</a>
+        </div><!--menu -->
+        <div class="menu-mobile">
+            <i class="fa-solid fa-bars menu-mobile-icon"></i>
+            <div class="menu-items ">
+                <a href="../home/index.html">Home</a>
+                <a href="../info/quem-somos.html">Quem Somos</a>
+                <a href="../photos/fotos.html">Fotos</a>
+                <a href="../donation/doe.html">Doe</a>
+                <a class="btn-menu" href="../fom/formulario.html">Seja Voluntário</a>
+            </div>
+    </header>     
+  <body>
+    <h1>Formulário de Contato</h1>
+    <!--E-mail de envio-->
+    <form
+      action="https://formsubmit.co/your@email.com"
+      method="POST"
+      class="form"
+    >
+      <label for="name">Nome</label>
+      <input type="text" name="name" id="name" required />
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email" required />
+      <label for="message">Mensagem</label>
+      <textarea name="message" id="message" required></textarea>
+      <input type="hidden" name="_captcha" value="false" />
+      <input
+        type="hidden"
+        name="_next"
+        value="https://yourdomain.co/thanks.html"
+      />
+      <button type="submit">Enviar</button>
+    </form>
+
+    <!-- FOOTER -->     
+    <footer>
+      <div class="footer-content">
+          <div class="footer-content-contacts">
+              <img src="../img/acaosocial-logo-redonda.png" alt="logo">
+              <h2>A Caridade<br>Não Espera</h2>
+          </div><!-- footer-content-contacts -->
+          <div class="vertical-line"></div>
+          <div class="footer-list">
+              <ul class="footer-list">
+                  <li><h2>Menu</h2>
+                    <li><a href="../home/index.html" class="footer-link">Home</a> 
+                    <li><a href="../info/quem-somos.html" class="footer-link">Quem Somos</a>
+                    <li><a href="../photos/fotos.html" class="footer-link">Fotos</a>
+                    <li><a href="../donation/doe.html" class="footer-link">Doe</a>
+              </ul>   
+          </div>
+          <!-- footer-list -->
+          <div class="subscribe">
+              <h2>Fale Conosco<br></h2>
+              <div class="footer-social-media">
+                  <a href="https://www.instagram.com/acaridadenaoespera/" class="footer-link" id="instagram">
+                      <i class="fa-brands fa-instagram" style="color: #ffffff;"></i>
+                  </a>
+                  <a href="#" class="footer-link" id="facebook">
+                      <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                  </a>
+                  <a href="#" class="footer-link" id="whatsapp">
+                      <i class="fa-brands fa-whatsapp" style="color: #ffffff;"></i>
+                  </a>
+              </div><!-- footer-social-media -->
+          </div><!-- subscribe -->
+      </div><!-- footer-content -->
+      
+      <div class="footer-copyright">
+          &#169
+          2023 Cidadania em Ação
+      </div><!-- footer-copyright -->
+  </footer><!-- rodapé -->
+
+
+  <!-- MENU MOBILE -->     
+  <script>
+      var el = document.querySelector('.menu-mobile-icon');
+      el.addEventListener('click',()=>{
+         // Queremos mostrar o menu
+         var menuItems = document.querySelector('.menu-items');
+         if(menuItems.classList.contains('show')){
+          menuItems.classList.add('hidde');
+          menuItems.classList.remove('show');
+         }else{
+          menuItems.classList.add('show');
+          menuItems.classList.remove('hidde');
+         }
+         
+      });
+
+
+      ////////////////////
+
+      const loaderContainer = document.createElement('div');
+        loaderContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        `;
+
+        const loader = document.createElement('div');
+        loader.style.cssText = `
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            animation: spin 1s linear infinite;
+        `;
+
+        loaderContainer.appendChild(loader);
+        document.body.appendChild(loaderContainer);
+
+        // Função para ocultar a tela de carregamento quando a página estiver totalmente carregada
+        window.addEventListener('load', () => {
+            loaderContainer.style.display = 'none';
+        });
+  </script>
+
+  <script src="../script.js"></script>
+  </body>
+</html>
