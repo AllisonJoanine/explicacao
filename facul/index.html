@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <ul class='slider'>
+          <li class='item' style="background-image: url('https://www.gov.br/secom/pt-br/assuntos/noticias/2024/05/governo-federal-instalara-escritorio-de-monitoramento-em-porto-alegre-para-agilizar-acoes-de-apoio-ao-rio-grande-do-sul/guaiba.jpg/@@images/1f01317a-605f-43e5-9d8d-43f9e0c8c90c.jpeg')">
+            <div class='content'>
+              <h2 class='title'>"Lossless Youths"</h2>
+              <p class='description'> Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+              praesentium nisi. Id laboriosam ipsam enim.  </p>
+              <button>Read More</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://www.infomoney.com.br/wp-content/uploads/2024/05/riograndedosul.webp?quality=70')">
+            <div class='content'>
+              <h2 class='title'>"Estrange Bond"</h2>
+              <p class='description'> Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+              praesentium nisi. Id laboriosam ipsam enim.  </p>
+              <button>Read More</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://observatorio3setor.org.br/wp-content/uploads/2024/05/Enchentescriancas.jpeg')">
+            <div class='content'>
+              <h2 class='title'>"The Gate Keeper"</h2>
+              <p class='description'> Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+              praesentium nisi. Id laboriosam ipsam enim.  </p>
+              <button>Read More</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2024/05/02/2024-05-02t113317z_1964364756_rc2th7aiwi27_rtrmadp_3_brazil-rains-(1)-uve50620df7a.JPG')">
+            <div class='content'>
+              <h2 class='title'>"Last Trace Of Us"</h2>
+              <p class='description'>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+              </p>
+              <button>Read More</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://www.jornaldocomercio.com/_midias/jpg/2023/09/07/53171758200_84d8fd2950_o-10325001.jpg')">
+            <div class='content'>
+              <h2 class='title'>"Urban Decay"</h2>
+              <p class='description'>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id laboriosam ipsam enim.
+              </p>
+              <button>Read More</button>
+            </div>
+          </li>
+          <li class='item' style="background-image: url('https://imagens.ebc.com.br/iPrdnr08ORQCF_l2rbe_ViIPe_Y=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/2024/05/04/2024-05-04t220259z_1_lynxmpek430au_rtroptp_4_geral-rs-chuvas-4demaio.jpg?itok=H4IX1WWV')">
+            <div class='content'>
+              <h2 class='title'>"The Migration"</h2>
+              <p class='description'> Lorem ipsum, dolor sit amet consectetur
+              adipisicing elit. Tempore fuga voluptatum, iure corporis inventore
+              praesentium nisi. Id laboriosam ipsam enim.  </p>
+              <button>Read More</button>
+            </div>
+          </li>
+        </ul>
+        <nav class='nav'>
+          <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+          <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+        </nav>
+      </main>
+      
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script>
+        const slider = document.querySelector('.slider');
+
+function activate(e) {
+  const items = document.querySelectorAll('.item');
+  e.target.matches('.next') && slider.append(items[0])
+  e.target.matches('.prev') && slider.prepend(items[items.length-1]);
+}
+
+document.addEventListener('click',activate,false);
+      </script>
+</body>
+</html>
