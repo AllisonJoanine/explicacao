@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
+    <title>Controle Financeiro</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark {
+            background-color: #333;
+            color: #fff;
+        }
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        nav {
+            margin: 15px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            flex: 1 1 280px;
+            transition: transform 0.2s;
+        }
+        .card.dark {
+            background: #444;
+            color: #fff;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        h2, h3 {
+            color: #333;
+        }
+        body.dark h2, body.dark h3 {
+            color: #fff;
+        }
+        .chart {
+            height: 150px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #4CAF50;
+            color: white;
+        }
+        body.dark th {
+            background: #555;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group input, .form-group select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .theme-toggle {
+            margin: 10px 0;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .theme-toggle:hover {
+            background: #45a049;
+        }
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 100%;
+            }
+            .chart {
+                height: 120px;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+            .form-group input, .form-group select {
+                padding: 8px;
+            }
+            button, .theme-toggle {
+                padding: 8px;
+            }
+            .chart {
+                height: 100px;
+            }
+        }
+        .chart-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .icon {
+            margin-right: 8px;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body data-aos-easing="ease" data-aos-duration="600" data-aos-delay="0">
+    <header>
+        <h1><i class="fas fa-piggy-bank icon"></i> Dashboard de Controle Financeiro</h1>
+        <nav>
+            <a href="#add-transaction">Adicionar Transação</a>
+            <a href="#charts">Gráficos</a>
+            <a href="#recent-transactions">Transações Recentes</a>
+            <a href="#summary">Resumo</a>
+            <a href="#tips">Dicas Financeiras</a>
+        </nav>
+        <button class="theme-toggle" id="themeToggleBtn">Mudar para Tema Escuro</button>
+    </header>
+    <div class="container">
+        <div class="card" id="add-transaction" data-aos="fade-up">
+            <h2><i class="fas fa-plus icon"></i> Adicionar Transação</h2>
+            <div class="form-group">
+                <label for="date">Data:</label>
+                <input type="date" id="date">
+            </div>
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <input type="text" id="description" placeholder="Descrição da transação">
+            </div>
+            <div class="form-group">
+                <label for="value">Valor:</label>
+                <input type="number" id="value" placeholder="Valor">
+            </div>
+            <div class="form-group">
+                <label for="type">Tipo:</label>
+                <select id="type">
+                    <option value="Receita">Receita</option>
+                    <option value="Despesa">Despesa</option>
+                </select>
+            </div>
+            <button id="addTransactionBtn">Adicionar Transação</button>
+        </div>
+        <div class="card" id="charts" style="flex: 1 1 100%;" data-aos="fade-up">
+            <h2><i class="fas fa-chart-bar icon"></i> Gráficos Financeiros</h2>
+            <div class="chart-container">
+                <div style="flex: 1;">
+                    <h3>Receitas e Despesas</h3>
+                    <canvas id="financeChart" class="chart"></canvas>
+                </div>
+                <div style="flex: 1;">
+                    <h3>Distribuição</h3>
+                    <canvas id="pieChart" class="chart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="card" id="recent-transactions" style="flex: 1 1 100%;" data-aos="fade-up">
+            <h2><i class="fas fa-history icon"></i> Transações Recentes</h2>
+            <table id="transactionTable">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Transações serão adicionadas aqui -->
+                </tbody>
+            </table>
+        </div>
+        <div class="card" id="summary" style="flex: 1 1 100%;" data-aos="fade-up">
+            <h2><i class="fas fa-wallet icon"></i> Resumo Financeiro</h2>
+            <p><strong>Total de Receitas:</strong> <span id="totalReceitas">R$ 0.00</span></p>
+            <p><strong>Total de Despesas:</strong> <span id="totalDespesas">R$ 0.00</span></p>
+            <p><strong>Saldo Total:</strong> <span id="saldoTotal">R$ 0.00</span></p>
+        </div>
+        <div class="card" id="tips" style="flex: 1 1 100%;" data-aos="fade-up">
+            <h2><i class="fas fa-lightbulb icon"></i> Dicas Financeiras</h2>
+            <ul>
+                <li>Mantenha um orçamento mensal.</li>
+                <li>Evite gastos desnecessários.</li>
+                <li>Considere investir parte de suas receitas.</li>
+                <li>Revise suas despesas regularmente.</li>
+            </ul>
+        </div>
+        <div class="card" id="goals" style="flex: 1 1 100%;" data-aos="fade-up">
+            <h2><i class="fas fa-bullseye icon"></i> Objetivos Financeiros</h2>
+            <form id="goalForm">
+                <div class="form-group">
+                    <label for="goalDescription">Descrição do Objetivo:</label>
+                    <input type="text" id="goalDescription" placeholder="Descrição do objetivo">
+                </div>
+                <div class="form-group">
+                    <label for="goalValue">Valor do Objetivo:</label>
+                    <input type="number" id="goalValue" placeholder="Valor do objetivo">
+                </div>
+                <button type="submit">Adicionar Objetivo</button>
+            </form>
+            <h3>Objetivos Adicionados</h3>
+            <ul id="goalList">
+                <!-- Lista de objetivos financeiros -->
+            </ul>
+        </div>
+    </div>
+    <script>
+        AOS.init(); // Inicializa AOS
+
+        const ctxBar = document.getElementById('financeChart').getContext('2d');
+        const financeChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Receitas', 'Despesas'],
+                datasets: [{
+                    label: 'Total',
+                    data: [0, 0],
+                    backgroundColor: ['#4CAF50', '#F44336'],
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            }
+        });
+
+        const ctxPie = document.getElementById('pieChart').getContext('2d');
+        const pieChart = new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: ['Receitas', 'Despesas'],
+                datasets: [{
+                    label: 'Distribuição',
+                    data: [0, 0],
+                    backgroundColor: ['#4CAF50', '#F44336'],
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        let totalReceitas = 0;
+        let totalDespesas = 0;
+
+        document.getElementById('addTransactionBtn').addEventListener('click', function() {
+            const date = document.getElementById('date').value;
+            const description = document.getElementById('description').value;
+            const value = parseFloat(document.getElementById('value').value);
+            const type = document.getElementById('type').value;
+
+            if (date && description && !isNaN(value)) {
+                const table = document.getElementById('transactionTable').getElementsByTagName('tbody')[0];
+                const newRow = table.insertRow();
+                newRow.insertCell(0).textContent = date;
+                newRow.insertCell(1).textContent = description;
+                newRow.insertCell(2).textContent = `R$ ${value.toFixed(2)}`;
+                newRow.insertCell(3).textContent = type;
+
+                // Atualizar totais
+                if (type === 'Receita') {
+                    totalReceitas += value; // Atualiza total de receitas
+                } else {
+                    totalDespesas += value; // Atualiza total de despesas
+                }
+                updateTotals();
+
+                // Atualizar o gráfico de barras
+                financeChart.data.datasets[0].data[0] = totalReceitas;
+                financeChart.data.datasets[0].data[1] = totalDespesas;
+                financeChart.update();
+
+                // Atualizar o gráfico de pizza
+                pieChart.data.datasets[0].data[0] = totalReceitas;
+                pieChart.data.datasets[0].data[1] = totalDespesas;
+                pieChart.update();
+
+                // Limpar os campos após adicionar
+                document.getElementById('date').value = '';
+                document.getElementById('description').value = '';
+                document.getElementById('value').value = '';
+                document.getElementById('type').value = 'Receita';
+            } else {
+                alert('Por favor, preencha todos os campos corretamente.');
+            }
+        });
+
+        function updateTotals() {
+            document.getElementById('totalReceitas').textContent = `R$ ${totalReceitas.toFixed(2)}`;
+            document.getElementById('totalDespesas').textContent = `R$ ${totalDespesas.toFixed(2)}`;
+            document.getElementById('saldoTotal').textContent = `R$ ${(totalReceitas - totalDespesas).toFixed(2)}`;
+        }
+
+        document.getElementById('themeToggleBtn').addEventListener('click', function() {
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            this.textContent = isDark ? 'Mudar para Tema Claro' : 'Mudar para Tema Escuro';
+            document.querySelectorAll('.card').forEach(card => {
+                card.classList.toggle('dark', isDark);
+            });
+        });
+
+        document.getElementById('goalForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const goalDescription = document.getElementById('goalDescription').value;
+            const goalValue = parseFloat(document.getElementById('goalValue').value);
+
+            if (goalDescription && !isNaN(goalValue)) {
+                const goalList = document.getElementById('goalList');
+                const newGoal = document.createElement('li');
+                newGoal.textContent = `${goalDescription} - R$ ${goalValue.toFixed(2)}`;
+                goalList.appendChild(newGoal);
+
+                // Limpar os campos após adicionar
+                document.getElementById('goalDescription').value = '';
+                document.getElementById('goalValue').value = '';
+            } else {
+                alert('Por favor, preencha todos os campos do objetivo corretamente.');
+            }
+        });
+    </script>
+</body>
+</html>
