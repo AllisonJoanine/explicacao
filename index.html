@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Portal da Faculdade</title>
+        <link rel="stylesheet" href="css/style.css" />
+        
+        <!-- FONTE POPPINS GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+         <!-- ÍCONES Lucide -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+
+    </head>
+      
+<body>
+
+  <!-- TOPO FIXO -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <img src="img/logo.png" alt="Logo da Faculdade" class="logo" />
+    </div>
+    <div class="topbar-menu">
+      <nav>
+        <ul>
+          <li><a href="#" onclick="loadPage('chatbot')"><i data-lucide="bot"></i> Chatbot</a></li>
+          <li><a href="#" onclick="loadPage('configuracoes')"><i data-lucide="settings"></i> Configurações</a></li>
+          <li><a href="#" onclick="loadPage('tutoriais')"><i data-lucide="book-open"></i> Tutoriais</a></li>
+          <li><a href="#" onclick="loadPage('ajuda')"><i data-lucide="help-circle"></i> Ajuda</a></li>
+          <li><a href="#" onclick="loadPortal()"><i data-lucide="graduation-cap"></i> Portal do Aluno</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  
+  
+
+  <!-- ÁREA DE CONTEÚDO QUE SERÁ CARREGADA DINAMICAMENTE -->
+  <main id="content" class="content-area">
+
+    <!-- Boas-vindas -->
+    <section class="intro reveal">
+      <h1>Bem-vindo ao Portal Acadêmico</h1>
+      <p>Este ambiente foi criado para facilitar o acesso aos serviços, tutoriais, informações e suporte da sua jornada acadêmica. Explore os recursos abaixo:</p>
+    </section>
+  
+    <hr class="divider" />
+  
+    <!-- Cards com gradientes -->
+    <section class="cards-container reveal">
+      <div class="card card-1">
+        <h3>Assistente Virtual</h3>
+        <p>Converse com nossa IA e tire dúvidas sobre horários, disciplinas, documentos e muito mais.</p>
+      </div>
+      <div class="card card-2">
+        <h3>Tutoriais e Vídeos</h3>
+        <p>Aprenda como usar o portal, acessar conteúdos, enviar trabalhos e se organizar melhor.</p>
+      </div>
+      <div class="card card-3">
+        <h3>Portal do Aluno</h3>
+        <p>Tenha acesso rápido ao sistema acadêmico, notas, boletos, histórico e matrícula.</p>
+      </div>
+    </section>
+    <section class="history reveal">
+        <h2>Nossa História</h2>
+        <p>Fundada em 1970, a Universidade Anhembi Morumbi é uma das instituições de ensino superior mais renomadas do Brasil. Iniciou suas atividades com um curso de Administração e, ao longo dos anos, expandiu sua oferta acadêmica, tornando-se referência em diversas áreas do conhecimento. A universidade é reconhecida por sua abordagem inovadora e por ser pioneira no uso de tecnologias educacionais, além de contar com uma infraestrutura moderna e corpo docente altamente qualificado.</p>
+      </section>
+      
+      <section class="courses reveal">
+        <h2>Nossos Cursos</h2>
+        <div class="course-list">
+          <div class="course-item">
+            <h3>Administração</h3>
+            <p>Formação de líderes e gestores para o mercado global.</p>
+          </div>
+          <div class="course-item">
+            <h3>Engenharia Civil</h3>
+            <p>Preparação de profissionais para construir o futuro.</p>
+          </div>
+          <div class="course-item">
+            <h3>Medicina</h3>
+            <p>Excelência no ensino para a saúde e bem-estar.</p>
+          </div>
+          <!-- Adicione mais cursos conforme necessário -->
+        </div>
+      </section>
+      
+      <section class="portal-features reveal">
+        <h2>O que você pode fazer neste Portal</h2>
+        <ul>
+          <li>Acessar materiais didáticos e conteúdos exclusivos.</li>
+          <li>Participar de fóruns e discussões acadêmicas.</li>
+          <li>Consultar notas e desempenho acadêmico.</li>
+          <li>Inscrever-se em eventos e workshops.</li>
+          <!-- Adicione mais funcionalidades conforme necessário -->
+        </ul>
+      </section>
+      
+    <hr class="divider" />
+  
+    <!-- Rodapé com contatos -->
+    <footer class="footer reveal">
+        <div class="footer-left">
+          <img src="img/logo.png" alt="Logo da Faculdade" class="footer-logo" />
+        </div>
+      
+        <div class="footer-divider"></div>
+      
+        <div class="footer-right">
+          <ul>
+            <li><a href="#"><i data-lucide="instagram"></i> @faculdade.oficial</a></li>
+            <li><a href="#"><i data-lucide="phone"></i> (11) 1234-5678</a></li>
+            <li><a href="#"><i data-lucide="mail"></i> contato@faculdade.com.br</a></li>
+            <li><a href="#"><i data-lucide="whatsapp"></i> (11) 91234-5678</a></li>
+            <li><a href="#"><i data-lucide="map-pin"></i> Av. Exemplo, 123 - Centro</a></li>
+          </ul>
+        </div>
+      </footer>
+      
+  
+  </main>
+  
+
+  <script src="js/script.js"></script>
+  <script src="js/scroll.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  
+</body>
+</html>
