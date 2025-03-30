@@ -1,4 +1,4 @@
-const apiKey = "";
+const apiKey = "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";
 
 // Dados do aluno embutidos no código
 const alunoData = {
