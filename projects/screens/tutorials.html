@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutoriais - Athon</title>
+  <link rel="stylesheet" href="../styles/topbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      color: #0D7C6F;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      color: #742472;
+      border-left: 6px solid #742472;
+      padding-left: 15px;
+      font-size: 1.4em;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .video-card {
+      background: linear-gradient(140deg, rgba(248,151,62,1), rgba(251,176,64,1));
+      border-radius: 12px;
+      padding: 30px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      position: relative;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-placeholder {
+      display: none;
+      background: #f2f2f2;
+      color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+      font-size: 1.1em;
+      box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .tip-card {
+      background: linear-gradient(140deg, rgba(13,124,111,1), rgba(13,179,147,1));
+      color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .tip-card h3 {
+      margin-top: 0;
+    }
+
+    .important-info {
+      background: linear-gradient(140deg, rgba(116,36,114,1), rgba(164,43,129,1));
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-container">
+      <img src="../images/logo.png" alt="Logo" class="logo">
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="chat.html">Chatbot</a>
+        <a href="tutorials.html">Tutoriais</a>
+        <a href="help.html">Ajuda</a>
+        <a href="portaldoaluno.html">Portal do Aluno</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Tutoriais e Dicas para Calouros</h1>
+    <p class="subtitle">Aqui você encontra vídeos e dicas práticas para facilitar sua vida universitária.</p>
+
+    <div class="section-title">📹 Vídeos Tutoriais (em breve)</div>
+    <div class="video-grid">
+      <div class="video-card" onclick="toggleVideo(this)">
+        Tutorial: Como usar o Portal do Aluno
+        <div class="video-placeholder">🎬 Vídeo disponível em breve!</div>
+      </div>
+      <div class="video-card" onclick="toggleVideo(this)">
+        Tutorial: Acesso à Biblioteca Virtual
+        <div class="video-placeholder">🎬 Vídeo disponível em breve!</div>
+      </div>
+      <div class="video-card" onclick="toggleVideo(this)">
+        Tutorial: Entendendo a grade curricular
+        <div class="video-placeholder">🎬 Vídeo disponível em breve!</div>
+      </div>
+    </div>
+
+    <div class="section-title">💡 Dicas Essenciais</div>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <h3><i class="fas fa-calendar-check"></i> Aproveite os Eventos</h3>
+        <p>Participe de palestras, workshops e atividades — eles fortalecem seu networking!</p>
+      </div>
+      <div class="tip-card">
+        <h3><i class="fas fa-laptop"></i> Use o Portal do Aluno</h3>
+        <p>Acesse notas, materiais, boletos e recados oficiais da faculdade diretamente pelo portal.</p>
+      </div>
+      <div class="tip-card">
+        <h3><i class="fas fa-comments"></i> Fale com Professores</h3>
+        <p>Não hesite em tirar dúvidas, sugerir ideias e se aproximar da equipe docente.</p>
+      </div>
+      <div class="tip-card">
+        <h3><i class="fas fa-users"></i> Faça amigos!</h3>
+        <p>Conectar-se com colegas ajuda a enfrentar desafios e melhora sua experiência universitária.</p>
+      </div>
+    </div>
+
+    <div class="important-info">
+      <h2><i class="fas fa-exclamation-circle"></i> Informação Importante</h2>
+      <p>Fique atento aos prazos acadêmicos e utilize os canais oficiais da Athon para dúvidas e informações. Sua organização faz toda a diferença no sucesso da sua jornada!</p>
+    </div>
+  </div>
+
+  <script>
+    function toggleVideo(card) {
+      const video = card.querySelector(".video-placeholder");
+      video.style.display = video.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>

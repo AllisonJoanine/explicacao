@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajuda - Athon</title>
+  <link rel="stylesheet" href="../styles/topbar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #0D7C6F;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .contact-card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      transition: transform 0.2s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-card i {
+      font-size: 1.5em;
+      color: #0D7C6F;
+      min-width: 30px;
+    }
+
+    .contact-card a {
+      color: #117a74;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      margin-top: 60px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-container">
+      <img src="../images/logo.png" alt="Logo" class="logo">
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="chat.html">Chatbot</a>
+        <a href="tutorials.html">Tutoriais</a>
+        <a href="help.html">Ajuda</a>
+        <a href="portaldoaluno.html">Portal do Aluno</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Precisa de ajuda?</h1>
+    <p class="subtitle">Entre em contato com a gente pelos canais abaixo. Estamos prontos para te ajudar no que for preciso!</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+551530425000">(15) 3042-5000</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:contato@athonedu.com.br">contato@athonedu.com.br</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-user-graduate"></i>
+        <a href="mailto:caa@athonedu.com.br">Atendimento ao Aluno: caa@athonedu.com.br</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-instagram"></i>
+        <a href="https://www.instagram.com/athonfaculdade" target="_blank">Instagram</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-facebook"></i>
+        <a href="https://www.facebook.com/athonfaculdade" target="_blank">Facebook</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-linkedin"></i>
+        <a href="https://www.linkedin.com/school/athon-ensino-superior/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.2095313538436!2d-47.45290802467099!3d-23.524716678822926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5ef4ac560f3f1%3A0x8b3194a2454b1e03!2sRua%20da%20Penha%2C%201181%20-%20Centro%2C%20Sorocaba%20-%20SP%2C%2018010-002!5e0!3m2!1spt-BR!2sbr!4v1711819749051!5m2!1spt-BR!2sbr"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Localização da Faculdade Athon">
+    </iframe>
+  </div>
+</body>
+</html>

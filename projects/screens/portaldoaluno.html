@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal do Aluno - Athon</title>
+  <link rel="stylesheet" href="../styles/topbar.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .iframe-container {
+      height: calc(100vh - 80px); /* ajusta para o topo */
+      width: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-container">
+      <img src="../images/logo.png" alt="Logo" class="logo">
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="chat.html">Chatbot</a>
+        <a href="tutorials.html">Tutoriais</a>
+        <a href="help.html">Ajuda</a>
+        <a href="portaldoaluno.html">Portal do Aluno</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="iframe-container">
+    <iframe src="https://saafapp.cscedu.com.br/login/athon" title="Portal do Aluno Athon"></iframe>
+  </div>
+</body>
+</html>

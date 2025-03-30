@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Anhembi Morumbi</title>
+  <link rel="stylesheet" href="../styles/topbar.css">
+  <link rel="stylesheet" href="../styles/login.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-container">
+      <img src="../images/logo.png" alt="Logo" class="logo">
+    </div>
+  </div>
+
+  <div class="login-container">
+    <form class="login-form" onsubmit="return handleLogin(event)">
+        <img src="../images/logo.png" alt="Logo" class="login-logo">
+        <h2>Bem-vindo(a)!</h2>
+        <input type="text" id="user" placeholder="RA ou CPF" required />
+        <input type="password" id="password" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+        <p class="login-info">Acesso Admin: admin / admin</p>
+      </form>
+      <!--Script de redirecionamento-->
+      <script>
+        function handleLogin(event) {
+          event.preventDefault();
+          
+          const user = document.getElementById('user').value.trim();
+          const password = document.getElementById('password').value.trim();
+      
+          if (user === 'admin' && password === 'admin') {
+            window.location.href = 'home.html'; // redireciona para a home
+          } else {
+            alert('Usuário ou senha inválidos!');
+          }
+      
+          return false;
+        }
+      </script>
+      
+  </div>
+</body>
+</html>

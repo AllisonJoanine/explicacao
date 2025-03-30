@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(140deg, #f8973e, #81ece8);
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  animation: float 4s ease-in-out infinite;
+}
+
+.login-form {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 320px;
+  position: relative;
+  animation: slideIn 0.8s ease forwards;
+}
+
+.login-logo {
+  width: 140px;
+  margin-bottom: 25px;
+  animation: bounce 1.2s ease;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+  color: #742472;
+  font-weight: 600;
+  font-size: 1.8em;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #742472;
+  box-shadow: 0 0 8px rgba(164, 43, 129, 0.3);
+}
+
+.login-form button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(140deg, #742472, #a42b81);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-form button:hover {
+  transform: scale(1.02);
+  background: linear-gradient(140deg, #a42b81, #742472);
+}
+
+.login-info {
+  font-size: 0.85em;
+  margin-top: 12px;
+  color: #888;
+  font-style: italic;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login-form {
+    width: 90%;
+    padding: 40px 20px;
+  }
+  .login-form h2 {
+    font-size: 1.5em;
+  }
+}

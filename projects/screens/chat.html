@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat - IA Athon</title>
+  <link rel="stylesheet" href="../styles/topbar.css">
+  <link rel="stylesheet" href="../styles/chat.css">
+  <script defer src="../functions/chat.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-container">
+      <img src="../images/logo.png" alt="Logo" class="logo">
+      <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="chat.html">Chatbot</a>
+        <a href="tutorials.html">Tutoriais</a>
+        <a href="help.html">Ajuda</a>
+        <a href="portaldoaluno.html">Portal do Aluno</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="chat-container">
+    <button id="clear-chat" class="clear-chat">Limpar Histórico</button>
+    <div id="chat-box" class="chat-box"></div>
+    
+    <form id="chat-form" class="chat-form">
+        <textarea id="user-input" placeholder="Digite sua dúvida..." required></textarea>
+
+      <button type="submit">
+        <img src="https://cdn-icons-png.flaticon.com/512/3682/3682321.png" alt="Enviar" />
+      </button>
+    </form>
+  </main>
+</body>
+</html>

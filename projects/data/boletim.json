@@ -1,0 +1,91 @@
+{
+    "nome": "João Silva",
+    "ra": "12345678",
+    "statusGeral": "Regular",
+  
+    "disciplinas": [
+      {
+        "nome": "Banco de Dados em Ambientes Locais e Nuvem - F",
+        "notas": [8.2, 9.1],
+        "faltas": 1,
+        "status": "Em andamento"
+      },
+      {
+        "nome": "Desenvolvimento de Aplicações Locais - F",
+        "notas": [7.5, 8.0],
+        "faltas": 2,
+        "status": "Em andamento"
+      },
+      {
+        "nome": "Engenharia de Software Aplicada - F",
+        "notas": [6.8, 7.2],
+        "faltas": 0,
+        "status": "Em andamento"
+      },
+      {
+        "nome": "Frameworks de Gestão de Projetos - F",
+        "notas": [8.0, 8.7],
+        "faltas": 1,
+        "status": "Em andamento"
+      },
+      {
+        "nome": "Introdução a Programação Orientada a Objetos - F",
+        "notas": [9.5],
+        "faltas": 0,
+        "status": "Em andamento"
+      }
+    ],
+  
+    "atividadesPendentes": [
+      {
+        "disciplina": "Frameworks de Gestão de Projetos - F",
+        "descricao": "Apresentação do projeto final",
+        "professor": "Valdinei Castelan",
+        "prazo": "2025-04-15"
+      }
+    ],
+  
+    "gradeHoraria": {
+      "segunda-feira": [
+        {
+          "horario": "19:15 até 22:45",
+          "disciplina": "Banco de Dados em Ambientes Locais e Nuvem - F",
+          "professor": "Cleber de Luca",
+          "local": "Lab. Boole"
+        }
+      ],
+      "terça-feira": [
+        {
+          "horario": "19:15 até 22:45",
+          "disciplina": "Desenvolvimento de Aplicações Locais - F",
+          "professor": "Anderson Reis de Campos",
+          "local": "Lab. Boole"
+        }
+      ],
+      "quarta-feira": [
+        {
+          "horario": "19:15 até 22:45",
+          "disciplina": "Engenharia de Software Aplicada - F",
+          "professor": "Andreia Santos",
+          "local": "Sala E2.1 - Lab. Jobs"
+        }
+      ],
+      "quinta-feira": [
+        {
+          "horario": "19:15 até 22:45",
+          "disciplina": "Frameworks de Gestão de Projetos - F",
+          "professor": "Valdinei Castelan",
+          "local": "Sala E2.7"
+        }
+      ],
+      "sexta-feira": [
+        {
+          "horario": "19:15 até 22:45",
+          "disciplina": "Introdução a Programação Orientada a Objetos - F",
+          "professor": "Hudson Victoria Diniz",
+          "local": "Sala E1.1 - Lab. Fortran"
+        }
+      ]
+    }
+  }
+  

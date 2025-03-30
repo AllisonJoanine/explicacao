@@ -1,0 +1,66 @@
+.topbar {
+    width: 100%;
+    background: linear-gradient(90deg, rgba(13,128,113,1) 0%, rgba(13,128,113,1) 33%, rgba(117,36,114,1) 66%, rgba(117,36,114,1) 100%);
+    color: white;
+    padding: 10px 0;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .topbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    height: 60px;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 30px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links a::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #ffcc70;
+    background-color: rgba(255,255,255,0.1);
+    transform: scale(1.08);
+  }
+  
+  .nav-links a:hover::before {
+    border-color: #ffcc70;
+    box-shadow: 0 0 8px rgba(255,204,112,0.4);
+  }
+  
