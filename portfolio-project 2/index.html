@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allison Joanine - Full-Stack Developer | AI & DevOps</title>
+    <meta name="description" content="Portfólio de Allison Joanine de Araujo Ribeiro - Desenvolvedor Full-Stack especializado em IA, DevOps e Segurança da Informação">
+    <meta name="keywords" content="desenvolvedor, full-stack, inteligência artificial, devops, segurança, python, react, javascript">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="src/styles/globals.css">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    
+    <!-- AOS Library for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Canvas for starfield background -->
+    <canvas id="starfield-canvas"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">AJ</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#experience" class="nav-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#education" class="nav-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="greeting">Olá, eu sou</span>
+                            <span class="name">Allison Joanine</span>
+                            <span class="title">Full-Stack Developer</span>
+                            <span class="subtitle">AI & DevOps Specialist</span>
+                        </h1>
+                        <p class="hero-description">
+                            Desenvolvedor apaixonado por tecnologia, com experiência em infraestrutura, 
+                            segurança de redes, desenvolvimento full-stack e inteligência artificial. 
+                            Desde os 14 anos aprimorando habilidades em programação e inovação.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-envelope"></i>
+                                Entre em Contato
+                            </a>
+                            <a href="#projects" class="btn btn-secondary">
+                                <i class="fas fa-code"></i>
+                                Ver Projetos
+                            </a>
+                        </div>
+                        <div class="hero-social">
+                            <a href="https://github.com/AllisonJoanine" target="_blank" aria-label="GitHub" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/allison-joanine-de-araujo-ribeiro-404996258" target="_blank" aria-label="LinkedIn" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="profile-card">
+                            <div class="profile-avatar">
+                                <img src="src/image/eu.png" alt="Allison Joanine" class="profile-img">
+                            </div>
+                            <div class="floating-icons">
+                                <i class="fab fa-python floating-icon" style="--delay: 0s"></i>
+                                <i class="fab fa-react floating-icon" style="--delay: 1s"></i>
+                                <i class="fab fa-js-square floating-icon" style="--delay: 2s"></i>
+                                <i class="fab fa-docker floating-icon" style="--delay: 3s"></i>
+                                <i class="fas fa-brain floating-icon" style="--delay: 4s"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Sobre Mim</h2>
+                    <p class="section-subtitle">Conheça minha trajetória e paixão pela tecnologia</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <p>
+    Desenvolvedor full-stack apaixonado por tecnologia, com sólida bagagem em infraestrutura, segurança de redes e inteligência artificial. Iniciei na programação aos 14 anos e, desde então, venho ampliando constantemente meu repertório técnico.
+</p>
+<p>
+    Tenho forte atuação em DevOps e engenharia de prompts, além de experiência prática na criação de sistemas de <strong>reconhecimento facial inteligente</strong> e de meu próprio aplicativo de IA. Busco inovação, organização e eficiência em cada projeto, entregando soluções que automatizam processos, elevam a produtividade e reforçam a segurança digital das empresas.
+</p>
+<p>
+    Sou comprometido com prazos, atento aos detalhes e acompanho de perto as tendências do setor. Minha missão é transformar ideias em soluções digitais robustas, seguras e realmente impactantes.
+</p>
+
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Anos de Experiência</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">20+</span>
+                                <span class="stat-label">Projetos Concluídos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Tecnologias</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image" data-aos="fade-left">
+                        <div class="about-card">
+                            <div class="card-content">
+                                <h3>Localização</h3>
+                                <p><i class="fas fa-map-marker-alt"></i> Sorocaba - SP, Brasil</p>
+                                <h3>Disponibilidade</h3>
+                                <p><i class="fas fa-clock"></i> Disponível para projetos</p>
+                                <h3>Foco Principal</h3>
+                                <p><i class="fas fa-target"></i> IA & Full-Stack Development</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Habilidades</h2>
+                    <p class="section-subtitle">Tecnologias e ferramentas que domino</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                        <div class="category-header">
+                            <i class="fas fa-brain"></i>
+                            <h3>AI & Machine Learning</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">PyTorch</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">TensorFlow</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">C# .NET</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                        <div class="category-header">
+                            <i class="fas fa-laptop-code"></i>
+                            <h3>Front-End</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">React</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React Native</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Angular</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Vue.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">TypeScript/JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                        <div class="category-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Back-End</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">.NET</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">MySQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">SQL Server</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                        <div class="category-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>DevOps & Segurança</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Docker</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Git</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Azure DevOps</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Fortinet</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Zabbix/Grafana</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Projetos</h2>
+                    <p class="section-subtitle">Alguns dos meus trabalhos mais recentes</p>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">LeiFacil Mobile</h3>
+                            <p class="project-description">
+                                Aplicativo mobile desenvolvido para facilitar o acesso e compreensão de leis e 
+                                regulamentações. Interface intuitiva com recursos de busca avançada e favoritos.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">API REST</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Projeto
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">JNSecure</h3>
+                            <p class="project-description">
+                                Sistema de segurança digital com monitoramento em tempo real, detecção de ameaças 
+                                e relatórios automatizados. Integração com ferramentas de segurança corporativa.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">C# .NET</span>
+                                <span class="tech-tag">Fortinet</span>
+                                <span class="tech-tag">Zabbix</span>
+                                <span class="tech-tag">Grafana</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Projeto
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">ALIS Vision</h3>
+                            <p class="project-description">
+                                Sistema de visão computacional com inteligência artificial para análise e 
+                                processamento de imagens. Utiliza deep learning para reconhecimento de padrões.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">PyTorch</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">TensorFlow</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Projeto
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Claricode Websites</h3>
+                            <p class="project-description">
+                                Desenvolvimento de websites modernos e responsivos para empresas e organizações. 
+                                Foco em performance, SEO e experiência do usuário.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">Node.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://claricodesolutions.github.io/portifolio/index.html" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    Ver Projeto
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                    Código
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-image">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Facial Recognition System</h3>
+                            <p class="project-description">
+                                Sistema avançado de reconhecimento facial utilizando deep learning e visão computacional. 
+                                Implementa algoritmos de detecção e identificação facial em tempo real com alta precisão.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Deep Learning</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/AllisonJoanine/ReconhecimentoFacial.git" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="project-image">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">LeiFacil Mobile – Legal AI Assistant</h3>
+                            <p class="project-description">
+                                Assistente de IA especializado em legislação brasileira. Aplicativo mobile que facilita 
+                                o acesso e compreensão de leis, com busca inteligente e explicações simplificadas.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">AI/NLP</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">API REST</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/AllisonJoanine/applaws.git" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projects-footer" data-aos="fade-up" data-aos-delay="700">
+                    <a href="https://github.com/AllisonJoanine" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        More Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Experiência</h2>
+                    <p class="section-subtitle">Minha trajetória profissional</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-date">Jan 2024 - Presente</div>
+                        <div class="timeline-content">
+                            <h3>Freelancer e Projetos Pessoais</h3>
+                            <h4>Claricode Solutions</h4>
+                            <ul>
+                                <li>Desenvolvimento de aplicativo próprio de inteligência artificial</li>
+                                <li>Criação de software local para controle de vendas e chamados</li>
+                                <li>Tradução de requisitos de linguagem em projetos de alto nível</li>
+                                <li>Gerenciamento e desenvolvimento de site para ONG com equipe de estudantes</li>
+                            </ul>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">AI/ML</span>
+                                <span class="tech-tag">Project Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-left">
+                        <div class="timeline-date">Ago 2023 - Fev 2025</div>
+                        <div class="timeline-content">
+                            <h3>Developer Full-Stack - Dev de Inteligência Artificial</h3>
+                            <h4>Alumisoft Softwares e Instalações LTDA</h4>
+                            <ul>
+                                <li>Desenvolvimento full-stack de software novo da empresa</li>
+                                <li>Criação de sistema PHP para controle de empréstimos de máquinas</li>
+                                <li>Elaboração de documentos de aplicação funcional e técnica</li>
+                                <li>Propostas criativas de melhoria baseadas em experiência com clientes</li>
+                                <li>Desenvolvimento de soluções de Inteligência Artificial</li>
+                            </ul>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">Full-Stack</span>
+                                <span class="tech-tag">AI Development</span>
+                                <span class="tech-tag">Documentation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item" data-aos="fade-right">
+                        <div class="timeline-date">Fev 2024</div>
+                        <div class="timeline-content">
+                            <h3>Analista de Segurança de Rede</h3>
+                            <h4>Alumisoft Softwares e Instalações LTDA</h4>
+                            <ul>
+                                <li>Trabalho com recursos de segurança Fortinet</li>
+                                <li>Gerenciamento de sistemas com Zabbix e Grafana</li>
+                                <li>Configuração e instalação de servidores corporativos</li>
+                                <li>Utilização de ferramentas de teste de penetração (Nmap)</li>
+                                <li>Combate a ataques cibernéticos</li>
+                            </ul>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">Fortinet</span>
+                                <span class="tech-tag">Zabbix</span>
+                                <span class="tech-tag">Grafana</span>
+                                <span class="tech-tag">Network Security</span>
+                                <span class="tech-tag">Penetration Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Educação</h2>
+                    <p class="section-subtitle">Formação acadêmica e certificações</p>
+                </div>
+                <div class="education-grid">
+                    <div class="education-card main-education" data-aos="fade-up" data-aos-delay="100">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+                            <h4>Faculdade Anhembi Morumbi Sorocaba</h4>
+                            <p class="education-period">Jan 2024 - Presente</p>
+                            <p class="education-description">
+                                Ênfase em desenvolvimento de sistemas, liderança de projetos e gestão de equipes. 
+                                Estudo de planejamento, coordenação, ética profissional e desenvolvimento completo de software.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="certifications" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="certifications-title">Certificações e Cursos</h3>
+                        <div class="certifications-grid">
+                            <div class="cert-item">
+                                <div class="cert-icon">
+                                    <i class="fab fa-microsoft"></i>
+                                </div>
+                                <div class="cert-content">
+                                    <h4>Curso Avançado de C# com .NET 9.0</h4>
+                                    <p>Udemy - Jan 2023</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="cert-content">
+                                    <h4>Curso Full Stack – Desenvolvimento Web Completo</h4>
+                                    <p>Danki Code - 2023</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="cert-content">
+                                    <h4>Liderança de Equipes Híbridas e Remotas</h4>
+                                    <p>Abr 2024 - Mai 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-icon">
+                                    <i class="fab fa-python"></i>
+                                </div>
+                                <div class="cert-content">
+                                    <h4>Python Completo</h4>
+                                    <p>Udemy - Jan 2022 - Jan 2025</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-icon">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="cert-content">
+                                    <h4>JavaScript Avançado</h4>
+                                    <p>Udemy - Jan 2022 - Jan 2025</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="cert-content">
+                                    <h4>Inteligência Artificial com PyTorch & TensorFlow</h4>
+                                    <p>Udemy - Jan 2022 - Jan 2025</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="cert-content">
+                                    <h4>FCA – FortiGate 7.4 Operator / ISO 27001 – EXIN ISFS</h4>
+                                    <p>Fev 2024 - Jul 2024</p>
+                                </div>
+                            </div>
+
+                            <div class="cert-item">
+                                <div class="cert-icon">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <div class="cert-content">
+                                    <h4>Inglês – Comunicação Profissional e Técnica</h4>
+                                    <p>Instituto Americano – Unidade Itavuvu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="languages" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="languages-title">Idiomas</h3>
+                        <div class="languages-list">
+                            <div class="language-item">
+                                <span class="language-name">Português</span>
+                                <div class="language-level">
+                                    <div class="level-bar">
+                                        <div class="level-progress" style="width: 100%"></div>
+                                    </div>
+                                    <span class="level-text">Nativo</span>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">Inglês</span>
+                                <div class="language-level">
+                                    <div class="level-bar">
+                                        <div class="level-progress" style="width: 75%"></div>
+                                    </div>
+                                    <span class="level-text">Intermediário/Avançado</span>
+                                </div>
+                            </div>
+                            <div class="language-item">
+                                <span class="language-name">Espanhol</span>
+                                <div class="language-level">
+                                    <div class="level-bar">
+                                        <div class="level-progress" style="width: 60%"></div>
+                                    </div>
+                                    <span class="level-text">Intermediário</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Contato</h2>
+                    <p class="section-subtitle">Vamos trabalhar juntos!</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3>Entre em Contato</h3>
+                        <p>
+                            Estou sempre aberto a discutir novos projetos, oportunidades criativas 
+                            ou parcerias. Vamos conversar sobre como posso ajudar a transformar 
+                            suas ideias em realidade.
+                        </p>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>allisonjoanine@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-whatsapp"></i>
+                                <div>
+                                    <h4>WhatsApp</h4>
+                                    <p>+55 15 99186-1717</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Localização</h4>
+                                    <p>Sorocaba - SP, Brasil</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-actions">
+                            <a href="https://wa.me/5515991861717" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                            <a href="mailto:allisonjoanine@gmail.com" class="btn btn-email">
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-form" data-aos="fade-left">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Assunto</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensagem</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Mensagem
+                            </button>
+                        </form>
+                    </div>
+                       <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-text">
+                        <p>&copy; 2024 Allison Joanine de Araujo Ribeiro. Todos os direitos reservados.</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://github.com/AllisonJoanine" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/allison-joanine-de-araujo-ribeiro-404996258" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:allisonjoanine@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>>
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-toggle" id="chat-toggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-panel" id="chat-panel">
+            <div class="chat-header">
+                <h3>Assistente do Portfólio</h3>
+                <button class="chat-close" id="chat-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-message bot-message">
+                    <p>Olá! Sou o assistente do portfólio do Allison. Como posso ajudá-lo com informações sobre suas habilidades e projetos?</p>
+                </div>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Digite sua pergunta...">
+                <button id="chat-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="chat-limit">
+                <span id="message-count">0</span>/6 mensagens
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="public/starfield.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="src/scripts/main.js"></script>
+    <script src="src/scripts/aos-init.js"></script>
+    <script src="src/scripts/chat-widget.js"></script>
+</body>
+</html>
+
