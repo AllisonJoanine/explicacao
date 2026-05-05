@@ -1,24 +1,530 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Jornada JavaScript Pixelada</title>
-    <meta
-      name="description"
-      content="Aventura educativa em estilo jogo 2D pixelado para aprender JavaScript em 50 níveis, com personagem, fases, perguntas, lógica e desafios práticos."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Nunito+Sans:wght@400;600;700;800&family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <script type="module" crossorigin src="./assets/index-CXtReVVG.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BFgssvyb.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Instituto Galvão Azevedo - ONG que ajuda outras ONGs com arrecadações. Ajudar sem julgar." />
+  <meta name="keywords" content="ONG, Instituto Galvão Azevedo, doação, ajuda, solidariedade, Pix" />
+  <meta property="og:title" content="Instituto Galvão Azevedo" />
+  <meta property="og:description" content="Ajudar sem julgar. ONG que apoia outras organizações com arrecadações." />
+  <meta property="og:image" content="logo.png" />
+  <title>Instituto Galvão Azevedo – Ajudar Sem Julgar</title>
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-  <body>
-    <div id="root"></div>
-  </body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo">
+        <img src="logo.png" alt="Logo Instituto Galvão Azevedo" />
+        <span>Instituto Galvão Azevedo</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link">Início</a></li>
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#ongs" class="nav-link">ONGs Apoiadas</a></li>
+        <li><a href="#diretoria" class="nav-link">Diretoria</a></li>
+        <li><a href="#doe" class="nav-link nav-cta">Doe Agora</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <img src="hero-bg.jpg" alt="Pessoas unidas em círculo" class="hero-bg" />
+    <div class="hero-content container">
+      <img src="logo.png" alt="Logo" class="hero-logo animate-in" />
+      <h1 class="animate-in delay-1">Instituto Galvão Azevedo</h1>
+      <p class="hero-tagline animate-in delay-2">Ajudar Sem Julgar</p>
+      <p class="hero-sub animate-in delay-3">
+        Uma ONG que une forças para apoiar outras organizações sociais,<br />
+        ampliando o alcance da solidariedade em nossa comunidade.
+      </p>
+      <div class="hero-btns animate-in delay-4">
+        <a href="#doe" class="btn btn-primary">
+          <i class="fas fa-heart"></i> Faça uma Doação
+        </a>
+        <a href="#sobre" class="btn btn-outline">
+          <i class="fas fa-info-circle"></i> Saiba Mais
+        </a>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#ffffff" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ===== NÚMEROS ===== -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon" style="background: var(--blue)"><i class="fas fa-calendar-alt"></i></div>
+        <div class="stat-info">
+          <span class="stat-number">2023</span>
+          <span class="stat-label">Fundado em Março</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: var(--green)"><i class="fas fa-hands-helping"></i></div>
+        <div class="stat-info">
+          <span class="stat-number">15</span>
+          <span class="stat-label">ONGs Apoiadas</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: var(--orange)"><i class="fas fa-heart"></i></div>
+        <div class="stat-info">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Vidas Impactadas</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon" style="background: var(--purple)"><i class="fas fa-users"></i></div>
+        <div class="stat-info">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Sem Julgamento</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE ===== -->
+  <section class="section sobre" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Quem Somos</span>
+        <h2>Sobre o Instituto</h2>
+        <p>Conheça nossa história e missão</p>
+      </div>
+      <div class="sobre-grid">
+        <div class="sobre-text">
+          <h3>Uma rede de solidariedade</h3>
+          <p>
+            Fundado em <strong>março de 2023</strong>, o <strong>Instituto Galvão Azevedo</strong> nasceu com um propósito claro e transformador: ser o elo entre a generosidade das pessoas e as organizações sociais que mais precisam de apoio.
+          </p>
+          <p>
+            Somos uma ONG que <strong>ajuda outras ONGs</strong>. Nossa atuação é focada em arrecadações e na mobilização de recursos para ampliar o alcance de instituições que realizam um trabalho essencial junto às comunidades mais vulneráveis.
+          </p>
+          <p>
+            Guiados pelo princípio de <strong>"Ajudar Sem Julgar"</strong>, acreditamos que toda pessoa merece dignidade, respeito e apoio, independentemente de sua história ou circunstâncias.
+          </p>
+          <div class="sobre-valores">
+            <div class="valor-item">
+              <i class="fas fa-heart" style="color: var(--red)"></i>
+              <span>Solidariedade</span>
+            </div>
+            <div class="valor-item">
+              <i class="fas fa-balance-scale" style="color: var(--blue)"></i>
+              <span>Sem Julgamento</span>
+            </div>
+            <div class="valor-item">
+              <i class="fas fa-handshake" style="color: var(--green)"></i>
+              <span>Parceria</span>
+            </div>
+            <div class="valor-item">
+              <i class="fas fa-star" style="color: var(--yellow)"></i>
+              <span>Transparência</span>
+            </div>
+          </div>
+        </div>
+        <div class="sobre-visual">
+          <div class="sobre-card-destaque">
+            <div class="destaque-icon">
+              <img src="logo.png" alt="Logo Instituto" />
+            </div>
+            <h4>Nossa Missão</h4>
+            <p>Fortalecer o ecossistema social apoiando ONGs que transformam vidas todos os dias.</p>
+          </div>
+          <div class="sobre-card-destaque" style="border-top: 4px solid var(--orange)">
+            <div class="destaque-icon" style="background: linear-gradient(135deg, var(--orange), var(--yellow))">
+              <i class="fas fa-bullseye" style="color: white; font-size: 2rem;"></i>
+            </div>
+            <h4>Nossa Visão</h4>
+            <p>Um Brasil onde nenhuma organização social deixa de atuar por falta de recursos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ONGs APOIADAS ===== -->
+  <section class="section ongs" id="ongs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Rede de Apoio</span>
+        <h2>ONGs que Apoiamos</h2>
+        <p>Organizações que recebem nosso suporte e juntas transformam vidas</p>
+      </div>
+      <div class="ongs-grid">
+        <div class="ong-card" style="--accent: var(--blue)">
+          <div class="ong-icon"><i class="fas fa-home"></i></div>
+          <h4>Lar Assistencial Matilde</h4>
+          <p>Assistência e acolhimento para pessoas em situação de vulnerabilidade.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--green-light)">
+          <div class="ong-icon"><i class="fas fa-leaf"></i></div>
+          <h4>Jardim das Borboletas</h4>
+          <p>Projeto de desenvolvimento e transformação social.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--green)">
+          <div class="ong-icon"><i class="fas fa-pray"></i></div>
+          <h4>Casa de Oração São Francisco de Assis</h4>
+          <p>Apoio espiritual e assistência à comunidade.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--yellow)">
+          <div class="ong-icon"><i class="fas fa-child"></i></div>
+          <h4>Projeto Vinde</h4>
+          <p>Acolhimento e suporte para crianças e famílias.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--orange)">
+          <div class="ong-icon"><i class="fas fa-life-ring"></i></div>
+          <h4>Resgate de Vidas</h4>
+          <p>Intervenção e apoio a pessoas em situação de risco.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--red)">
+          <div class="ong-icon"><i class="fas fa-moon"></i></div>
+          <h4>Lar Espírita Pouso do Amanhecer</h4>
+          <p>Assistência espiritual e social à comunidade.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--pink)">
+          <div class="ong-icon"><i class="fas fa-seedling"></i></div>
+          <h4>Projeto Caju</h4>
+          <p>Desenvolvimento social e apoio a famílias carentes.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--purple)">
+          <div class="ong-icon"><i class="fas fa-hands"></i></div>
+          <h4>Casa da Caridade</h4>
+          <p>Distribuição de recursos e apoio humanitário.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--blue)">
+          <div class="ong-icon"><i class="fas fa-utensils"></i></div>
+          <h4>Projeto Fome tem Pressa</h4>
+          <p>Combate à fome com distribuição de refeições.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--green-light)">
+          <div class="ong-icon"><i class="fas fa-star-of-david"></i></div>
+          <h4>Centro Espírita Jesus de Nazaré</h4>
+          <p>Assistência espiritual e social à comunidade.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--orange)">
+          <div class="ong-icon"><i class="fas fa-dove"></i></div>
+          <h4>Centro Espírita Perdão Amor e Caridade</h4>
+          <p>Promoção do amor, perdão e caridade.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--pink)">
+          <div class="ong-icon"><i class="fas fa-female"></i></div>
+          <h4>Lar Mãe da Providência Santa Maria Maior</h4>
+          <p>Acolhimento e assistência à mulheres e famílias.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--yellow)">
+          <div class="ong-icon"><i class="fas fa-wheat-awn"></i></div>
+          <h4>Centro Espírita Seareiros de Jesus</h4>
+          <p>Ação social e assistência espiritual.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--red)">
+          <div class="ong-icon"><i class="fas fa-bowl-food"></i></div>
+          <h4>Casa da Sopa</h4>
+          <p>Distribuição de sopas e refeições para pessoas em necessidade.</p>
+        </div>
+        <div class="ong-card" style="--accent: var(--purple)">
+          <div class="ong-icon"><i class="fas fa-recycle"></i></div>
+          <h4>Projeto Restituindo Vidas</h4>
+          <p>Reintegração social e apoio a pessoas em situação de vulnerabilidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIRETORIA ===== -->
+  <section class="section diretoria" id="diretoria">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Nossa Equipe</span>
+        <h2>Diretoria</h2>
+        <p>Conheça as pessoas que lideram o Instituto Galvão Azevedo</p>
+      </div>
+      <div class="diretoria-grid">
+        <div class="diretor-card">
+          <div class="diretor-avatar" style="background: linear-gradient(135deg, var(--blue), var(--purple))">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="diretor-info">
+            <h4>Nelson Galvão de Azevedo</h4>
+            <span class="diretor-cargo">Presidente</span>
+          </div>
+        </div>
+        <div class="diretor-card">
+          <div class="diretor-avatar" style="background: linear-gradient(135deg, var(--green), var(--green-light))">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="diretor-info">
+            <h4>Henrique Azevedo Lima</h4>
+            <span class="diretor-cargo">Vice-Presidente</span>
+          </div>
+        </div>
+        <div class="diretor-card">
+          <div class="diretor-avatar" style="background: linear-gradient(135deg, var(--orange), var(--yellow))">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="diretor-info">
+            <h4>Felipe Azevedo Lima</h4>
+            <span class="diretor-cargo">Secretário</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DOE AGORA ===== -->
+  <section class="section doe" id="doe">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" style="background: rgba(255,255,255,0.2); color: white;">Faça a Diferença</span>
+        <h2 style="color: white;">Doe Agora</h2>
+        <p style="color: rgba(255,255,255,0.85);">Sua contribuição ajuda a manter o trabalho de 15 organizações sociais</p>
+      </div>
+      <div class="doe-grid">
+        <div class="doe-card pix-card">
+          <div class="pix-header">
+            <div class="pix-icon">
+              <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+                <path d="M25 50 L50 25 L75 50 L50 75 Z" fill="#32BCAD"/>
+                <path d="M50 25 L62.5 12.5 L87.5 37.5 L75 50 Z" fill="#32BCAD"/>
+                <path d="M75 50 L87.5 62.5 L62.5 87.5 L50 75 Z" fill="#32BCAD"/>
+                <path d="M50 75 L37.5 87.5 L12.5 62.5 L25 50 Z" fill="#32BCAD"/>
+                <path d="M25 50 L12.5 37.5 L37.5 12.5 L50 25 Z" fill="#32BCAD"/>
+              </svg>
+            </div>
+            <h3>Chave Pix</h3>
+          </div>
+          <div class="pix-key-box">
+            <p class="pix-label">CNPJ</p>
+            <div class="pix-key" id="pixKey">52.966.571/0001-89</div>
+            <button class="btn-copy" onclick="copiarPix()" id="btnCopy">
+              <i class="fas fa-copy"></i> Copiar Chave
+            </button>
+          </div>
+          <div class="pix-qr">
+            <div class="qr-placeholder">
+              <i class="fas fa-qrcode"></i>
+              <span>Escaneie ou copie a chave acima</span>
+            </div>
+          </div>
+          <p class="pix-info">
+            <i class="fas fa-shield-alt"></i>
+            Doação 100% segura via sistema Pix do Banco Central
+          </p>
+        </div>
+        <div class="doe-info-col">
+          <div class="doe-info-card">
+            <i class="fas fa-phone-alt" style="color: var(--green)"></i>
+            <div>
+              <h4>Outras Formas de Contribuir</h4>
+              <p>Quer contribuir de outra forma? Entre em contato conosco para alinhar possíveis retiradas e outras modalidades de doação.</p>
+              <a href="https://wa.me/5511996867635" target="_blank" class="btn btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> Falar pelo WhatsApp
+              </a>
+            </div>
+          </div>
+          <div class="doe-info-card">
+            <i class="fas fa-heart" style="color: var(--red)"></i>
+            <div>
+              <h4>Por que Doar?</h4>
+              <p>Cada contribuição, por menor que seja, chega diretamente às organizações que mais precisam. Você impacta vidas reais.</p>
+            </div>
+          </div>
+          <div class="doe-info-card">
+            <i class="fas fa-check-circle" style="color: var(--blue)"></i>
+            <div>
+              <h4>Transparência</h4>
+              <p>Todos os recursos arrecadados são destinados integralmente ao apoio das ONGs parceiras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSTAGRAM ===== -->
+  <section class="section instagram">
+    <div class="container">
+      <div class="instagram-cta">
+        <div class="instagram-icon">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <div class="instagram-text">
+          <h3>Siga-nos no Instagram</h3>
+          <p>Acompanhe nossas ações, eventos e o impacto do nosso trabalho nas comunidades.</p>
+          <a href="https://www.instagram.com/institutogalvaoazevedo" target="_blank" class="btn btn-instagram">
+            <i class="fab fa-instagram"></i> @institutogalvaoazevedo
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section class="section contato" id="contato">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Fale Conosco</span>
+        <h2>Contato</h2>
+        <p>Estamos prontos para atender você</p>
+      </div>
+      <div class="contato-grid">
+        <div class="contato-info">
+          <div class="contato-item">
+            <div class="contato-icon" style="background: var(--blue)">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div>
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/5511996867635" target="_blank">+55 11 99686-7635</a>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icon" style="background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888)">
+              <i class="fab fa-instagram"></i>
+            </div>
+            <div>
+              <h4>Instagram</h4>
+              <a href="https://www.instagram.com/institutogalvaoazevedo" target="_blank">@institutogalvaoazevedo</a>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icon" style="background: var(--green)">
+              <i class="fas fa-key"></i>
+            </div>
+            <div>
+              <h4>Chave Pix (CNPJ)</h4>
+              <span>52.966.571/0001-89</span>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icon" style="background: var(--orange)">
+              <i class="fas fa-calendar"></i>
+            </div>
+            <div>
+              <h4>Fundação</h4>
+              <span>Março de 2023</span>
+            </div>
+          </div>
+        </div>
+        <div class="contato-form-wrapper">
+          <form class="contato-form" id="contatoForm" onsubmit="enviarFormulario(event)">
+            <h3>Envie uma mensagem</h3>
+            <div class="form-group">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="assunto">Assunto</label>
+              <select id="assunto" name="assunto">
+                <option value="doacao">Quero fazer uma doação</option>
+                <option value="parceria">Parceria com ONG</option>
+                <option value="voluntario">Ser voluntário</option>
+                <option value="outro">Outro assunto</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Enviar Mensagem
+            </button>
+            <div id="formSuccess" class="form-success" style="display:none;">
+              <i class="fas fa-check-circle"></i> Mensagem enviada com sucesso! Entraremos em contato em breve.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.png" alt="Logo Instituto Galvão Azevedo" />
+          <h3>Instituto Galvão Azevedo</h3>
+          <p>Ajudar Sem Julgar</p>
+          <p class="footer-desc">ONG dedicada a fortalecer o ecossistema social apoiando organizações que transformam vidas.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#ongs">ONGs Apoiadas</a></li>
+            <li><a href="#diretoria">Diretoria</a></li>
+            <li><a href="#doe">Doe Agora</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-contato">
+          <h4>Contato</h4>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/5511996867635">+55 11 99686-7635</a></li>
+            <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/institutogalvaoazevedo" target="_blank">@institutogalvaoazevedo</a></li>
+            <li><i class="fas fa-key"></i> Pix: 52.966.571/0001-89</li>
+          </ul>
+        </div>
+        <div class="footer-doe">
+          <h4>Doe Agora</h4>
+          <p>Sua contribuição faz a diferença!</p>
+          <div class="footer-pix">
+            <p class="pix-label-footer">Chave Pix (CNPJ)</p>
+            <code>52.966.571/0001-89</code>
+            <button class="btn-copy-footer" onclick="copiarPix()">
+              <i class="fas fa-copy"></i> Copiar
+            </button>
+          </div>
+          <a href="https://wa.me/5511996867635" target="_blank" class="btn btn-whatsapp-sm">
+            <i class="fab fa-whatsapp"></i> Outras formas de doação
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Instituto Galvão Azevedo. Todos os direitos reservados.</p>
+        <p>CNPJ: 52.966.571/0001-89 | Fundado em Março de 2023</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BOTÃO FLUTUANTE WHATSAPP ===== -->
+  <a href="https://wa.me/5511996867635" target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ===== BOTÃO VOLTAR AO TOPO ===== -->
+  <button class="back-to-top" id="backToTop" onclick="voltarTopo()" title="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- ===== TOAST NOTIFICAÇÃO ===== -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i> Chave Pix copiada!
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
