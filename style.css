@@ -1455,3 +1455,342 @@ ul { list-style: none; }
 .heart-float {
   animation: heart-float 2s ease-out forwards;
 }: 0; }\n}\n\n.contato-animation-wrapper {\n  background: white;\n  border-radius: var(--radius);\n  padding: 40px;\n  box-shadow: var(--shadow);\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 30px;\n}\n\n.helping-animation {\n  width: 100%;\n  max-width: 500px;\n  height: 350px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n\n.animation-svg {\n  width: 100%;\n  height: 100%;\n  filter: drop-shadow(0 4px 15px rgba(0,0,0,0.1));\n}\n\n.helper-person {\n  animation: walk 2s ease-in-out infinite;\n}\n\n.help-box {\n  animation: walk 2s ease-in-out infinite;\n}\n\n.heart-float {\n  animation: heart-rise 2s ease-out infinite;\n  display: inline-block;\n}\n\n.animation-text {\n  text-align: center;\n  max-width: 500px;\n}\n\n.animation-text h3 {\n  font-size: 1.8rem;\n  color: var(--dark);\n  margin-bottom: 12px;\n  font-weight: 800;\n}\n\n.animation-text p {\n  font-size: 1rem;\n  color: var(--text-light);\n  margin-bottom: 24px;\n  line-height: 1.6;\n}\n\n.btn-large {\n  padding: 16px 32px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  display: inline-flex;\n  align-items: center;\n  gap: 10px;\n  border-radius: var(--radius);\n  transition: var(--transition);\n}\n\n.btn-large:hover {\n  transform: translateY(-3px);\n  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);\n}\n\n@media (max-width: 768px) {\n  .contato-animation-wrapper {\n    padding: 24px;\n  }\n  \n  .helping-animation {\n    height: 280px;\n  }\n  \n  .animation-text h3 {\n    font-size: 1.4rem;\n  }\n  \n  .animation-text p {\n    font-size: 0.95rem;\n  }\n}\n
+
+
+/* ===== ANIMAÇÕES DE FADE E EXPANSÃO ===== */
+
+/* Fade-in ao aparecer */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Expansão suave */
+@keyframes expandPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Fade in com slide */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Rotação suave */
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+/* Bounce */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Glow effect */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 195, 74, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 195, 74, 0.6);
+  }
+}
+
+/* Aplicar animações em imagens */
+img {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+/* Ícones com animação */
+i {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+/* Stat cards com fade e expansão */
+.stat-card {
+  animation: fadeInScale 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  animation: expandPulse 0.6s ease-in-out;
+  box-shadow: 0 8px 30px rgba(139, 195, 74, 0.3);
+}
+
+.stat-card i {
+  animation: rotateIn 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover i {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+/* ONG cards com fade */
+.ong-card {
+  animation: fadeInSlide 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.ong-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.ong-card i {
+  animation: rotateIn 0.8s ease-out forwards;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.ong-card:hover i {
+  animation: expandPulse 0.6s ease-in-out;
+  color: var(--green-light);
+}
+
+/* Diretor cards com zoom */
+.diretor-card {
+  animation: fadeInScale 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.diretor-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.diretor-avatar {
+  animation: rotateIn 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.diretor-card:hover .diretor-avatar {
+  animation: expandPulse 0.6s ease-in-out;
+  box-shadow: 0 0 20px rgba(139, 195, 74, 0.4);
+}
+
+.diretor-avatar i {
+  animation: fadeInScale 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.diretor-card:hover .diretor-avatar i {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+/* PIX icon com glow */
+.pix-icon {
+  animation: fadeInScale 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.pix-icon:hover {
+  animation: glow 1.5s ease-in-out infinite;
+}
+
+.pix-icon svg {
+  animation: rotateIn 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.pix-icon:hover svg {
+  animation: expandPulse 0.6s ease-in-out;
+}
+
+/* QR Code com fade e expansão */
+.qr-image {
+  animation: fadeInScale 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.qr-image:hover {
+  animation: expandPulse 0.6s ease-in-out;
+  box-shadow: 0 12px 40px rgba(139, 195, 74, 0.3);
+}
+
+/* Instagram icon com animação */
+.instagram-icon {
+  animation: fadeInScale 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.instagram-icon:hover {
+  animation: expandPulse 0.6s ease-in-out;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.instagram-icon i {
+  animation: rotateIn 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.instagram-icon:hover i {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+/* Contato items com fade */
+.contato-item {
+  animation: fadeInSlide 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.contato-item:hover {
+  transform: translateX(8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.contato-icon {
+  animation: rotateIn 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.contato-item:hover .contato-icon {
+  animation: expandPulse 0.6s ease-in-out;
+  box-shadow: 0 0 15px rgba(139, 195, 74, 0.4);
+}
+
+.contato-icon i {
+  animation: fadeInScale 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.contato-item:hover .contato-icon i {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+/* Animação do hero logo */
+.hero-logo {
+  animation: fadeInScale 1s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.hero-logo:hover {
+  animation: expandPulse 0.8s ease-in-out;
+  filter: drop-shadow(0 0 20px rgba(139, 195, 74, 0.4));
+}
+
+/* Buttons com animação */
+.btn {
+  animation: fadeInSlide 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  animation: expandPulse 0.6s ease-in-out;
+  transform: translateY(-3px);
+}
+
+.btn i {
+  animation: rotateIn 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.btn:hover i {
+  animation: bounce 0.6s ease-in-out infinite;
+}
+
+/* Sobre cards */
+.sobre-card-destaque {
+  animation: fadeInScale 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.sobre-card-destaque:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.sobre-card-destaque i {
+  animation: rotateIn 0.8s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+.sobre-card-destaque:hover i {
+  animation: expandPulse 0.6s ease-in-out;
+}
+
+/* Delay para animações em cascata */
+.stat-card:nth-child(1) { animation-delay: 0.1s; }
+.stat-card:nth-child(2) { animation-delay: 0.2s; }
+.stat-card:nth-child(3) { animation-delay: 0.3s; }
+.stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+.ong-card:nth-child(1) { animation-delay: 0.1s; }
+.ong-card:nth-child(2) { animation-delay: 0.15s; }
+.ong-card:nth-child(3) { animation-delay: 0.2s; }
+.ong-card:nth-child(4) { animation-delay: 0.25s; }
+.ong-card:nth-child(5) { animation-delay: 0.3s; }
+.ong-card:nth-child(6) { animation-delay: 0.35s; }
+.ong-card:nth-child(7) { animation-delay: 0.4s; }
+.ong-card:nth-child(8) { animation-delay: 0.45s; }
+.ong-card:nth-child(9) { animation-delay: 0.5s; }
+.ong-card:nth-child(10) { animation-delay: 0.55s; }
+.ong-card:nth-child(11) { animation-delay: 0.6s; }
+.ong-card:nth-child(12) { animation-delay: 0.65s; }
+.ong-card:nth-child(13) { animation-delay: 0.7s; }
+.ong-card:nth-child(14) { animation-delay: 0.75s; }
+.ong-card:nth-child(15) { animation-delay: 0.8s; }
+
+.diretor-card:nth-child(1) { animation-delay: 0.1s; }
+.diretor-card:nth-child(2) { animation-delay: 0.2s; }
+.diretor-card:nth-child(3) { animation-delay: 0.3s; }
+
+.contato-item:nth-child(1) { animation-delay: 0.1s; }
+.contato-item:nth-child(2) { animation-delay: 0.2s; }
+.contato-item:nth-child(3) { animation-delay: 0.3s; }
+.contato-item:nth-child(4) { animation-delay: 0.4s; }
+
+/* Animação contínua sutil */
+@keyframes subtleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.hero-logo {
+  animation: fadeInScale 1s ease-out forwards, subtleFloat 3s ease-in-out infinite;
+  animation-delay: 0s, 1s;
+}
+
+.stat-number {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+.stat-number:hover {
+  animation: expandPulse 0.6s ease-in-out;
+}
