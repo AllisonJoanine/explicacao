@@ -3,7 +3,7 @@
 window.addEventListener('load', () => {
   const splashScreen = document.getElementById('splashScreen');
   
-  // Mostrar splash por 3 segundos
+  // Mostrar splash por 4 segundos
   setTimeout(() => {
     splashScreen.style.animation = 'splashFadeOut 1s ease-in-out forwards';
     document.body.classList.add('page-loaded');
@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     setTimeout(() => {
       splashScreen.classList.add('hidden');
     }, 1000);
-  }, 2500);
+  }, 4000);
 });
 
 // Adicionar classe de carregamento no body
