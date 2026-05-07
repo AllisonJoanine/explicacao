@@ -162,6 +162,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ===== SCROLL TRIGGERED ANIMATIONS =====
+const scrollAnimationElements = document.querySelectorAll(
+  '.scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-zoom, .scroll-rotate, .scroll-blur'
+);
+
+const scrollAnimationObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      scrollAnimationObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+scrollAnimationElements.forEach(el => {
+  scrollAnimationObserver.observe(el);
+});
+
 // ===== CONTADOR ANIMADO =====
 function animateCounter(el, target, suffix = '') {
   let count = 0;
