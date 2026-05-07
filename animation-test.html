@@ -56,28 +56,47 @@
       height: auto;
     }
 
-    @keyframes walk-left-to-right {
-      0% { transform: translateX(-120px); }
-      50% { transform: translateX(0); }
-      100% { transform: translateX(-120px); }
+    /* Animações */
+    @keyframes walk-in {
+      0% { transform: translateX(-150px); }
+      100% { transform: translateX(0); }
     }
 
-    @keyframes walk-right-to-left {
-      0% { transform: translateX(120px); }
-      50% { transform: translateX(0); }
-      100% { transform: translateX(120px); }
+    @keyframes walk-out {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-150px); }
     }
 
-    @keyframes box-left-move {
-      0% { transform: translateX(-180px); }
-      50% { transform: translateX(30px); }
-      100% { transform: translateX(-180px); }
+    @keyframes box-move-in {
+      0% { transform: translateX(-200px); }
+      100% { transform: translateX(0); }
     }
 
-    @keyframes box-right-move {
-      0% { transform: translateX(180px); }
-      50% { transform: translateX(-30px); }
-      100% { transform: translateX(180px); }
+    @keyframes box-move-out {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-200px); }
+    }
+
+    @keyframes stand-up {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-50px); }
+    }
+
+    @keyframes celebrate {
+      0%, 100% { transform: translateY(-50px) scaleY(1); }
+      25% { transform: translateY(-50px) scaleY(1) rotateZ(-5deg); }
+      50% { transform: translateY(-50px) scaleY(1) rotateZ(5deg); }
+      75% { transform: translateY(-50px) scaleY(1) rotateZ(-5deg); }
+    }
+
+    @keyframes arms-up {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-30deg); }
+    }
+
+    @keyframes arms-up-right {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(30deg); }
     }
 
     @keyframes heart-float {
@@ -91,20 +110,31 @@
       }
     }
 
+    /* Aplicar animações */
     #person-left {
-      animation: walk-left-to-right 4s ease-in-out infinite;
-    }
-
-    #person-right {
-      animation: walk-right-to-left 4s ease-in-out infinite;
+      animation: walk-in 1s ease-in-out 0s forwards, walk-out 1s ease-in-out 7s forwards;
     }
 
     #box-left {
-      animation: box-left-move 4s ease-in-out infinite;
+      animation: box-move-in 1s ease-in-out 0s forwards, box-move-out 1s ease-in-out 7s forwards;
+    }
+
+    #person-right {
+      animation: stand-up 0.5s ease-in-out 1.5s forwards, celebrate 1s ease-in-out 3s forwards, stand-up 0.5s ease-in-out 7s reverse;
     }
 
     #box-right {
-      animation: box-right-move 4s ease-in-out infinite;
+      animation: stand-up 0.5s ease-in-out 1.5s forwards, celebrate 1s ease-in-out 3s forwards, stand-up 0.5s ease-in-out 7s reverse;
+    }
+
+    #arm-left-right {
+      transform-origin: 485px 115px;
+      animation: arms-up 1s ease-in-out 3s forwards;
+    }
+
+    #arm-right-right {
+      transform-origin: 515px 115px;
+      animation: arms-up-right 1s ease-in-out 3s forwards;
     }
 
     .heart-float {
@@ -194,37 +224,33 @@
           <circle cx="165" cy="105" r="6" fill="#FF5722" />
         </g>
 
-        <!-- Pessoa 2 (Direita - Recebedor) -->
+        <!-- Pessoa 2 (Direita - Recebedor) - SENTADO INICIALMENTE -->
         <g id="person-right">
           <!-- Cabeça -->
-          <circle cx="500" cy="80" r="20" fill="#4CAF50" />
-          <!-- Corpo -->
-          <rect x="485" y="105" width="30" height="40" rx="5" fill="#FF6B6B" />
+          <circle cx="500" cy="120" r="20" fill="#4CAF50" />
+          <!-- Corpo (sentado) -->
+          <rect x="485" y="145" width="30" height="35" rx="5" fill="#FF6B6B" />
           <!-- Braço esquerdo (recebendo) -->
-          <line x1="485" y1="115" x2="450" y2="100" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <line id="arm-left-right" x1="485" y1="155" x2="450" y2="130" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
           <!-- Braço direito -->
-          <line x1="515" y1="115" x2="540" y2="90" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
-          <!-- Perna esquerda -->
-          <line x1="490" y1="145" x2="490" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
-          <!-- Perna direita -->
-          <line x1="500" y1="145" x2="500" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          <line id="arm-right-right" x1="515" y1="155" x2="540" y2="130" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <!-- Perna esquerda (sentado) -->
+          <line x1="490" y1="180" x2="490" y2="210" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          <!-- Perna direita (sentado) -->
+          <line x1="500" y1="180" x2="500" y2="210" stroke="#333" stroke-width="4" stroke-linecap="round" />
         </g>
 
-        <!-- Caixa (Direita) -->
+        <!-- Caixa (Direita) - Recebida -->
         <g id="box-right">
-          <rect x="410" y="85" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
+          <rect x="410" y="125" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
           <!-- Fita da caixa -->
-          <rect x="410" y="105" width="50" height="4" fill="#FF5722" />
+          <rect x="410" y="145" width="50" height="4" fill="#FF5722" />
           <!-- Laço -->
-          <circle cx="435" cy="105" r="6" fill="#FF5722" />
+          <circle cx="435" cy="145" r="6" fill="#FF5722" />
         </g>
 
         <!-- Container para corações -->
-        <g id="hearts-container">
-          <text id="heart1" x="300" y="120" font-size="30" text-anchor="middle">❤️</text>
-          <text id="heart2" x="280" y="140" font-size="24" text-anchor="middle">💚</text>
-          <text id="heart3" x="320" y="140" font-size="24" text-anchor="middle">💙</text>
-        </g>
+        <g id="hearts-container"></g>
 
         <!-- Texto no centro -->
         <text x="300" y="230" font-size="18" text-anchor="middle" fill="#333" font-weight="bold">
@@ -246,28 +272,56 @@
   </div>
 
   <script>
-    // Criar corações flutuantes periodicamente
+    // Criar corações flutuantes no momento da comemoração
     function createFloatingHearts() {
       const hearts = ['❤️', '💚', '💙', '🧡', '💛'];
       const container = document.getElementById('hearts-container');
       
+      // Criar corações a cada 8 segundos (no momento da comemoração)
       setInterval(() => {
-        const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
-        const randomX = 250 + Math.random() * 100;
-        
-        heart.setAttribute('x', randomX);
-        heart.setAttribute('y', '150');
-        heart.setAttribute('font-size', '24');
-        heart.setAttribute('text-anchor', 'middle');
-        heart.textContent = randomHeart;
-        heart.classList.add('heart-float');
-        
-        container.appendChild(heart);
-        
-        // Remover após animação
-        setTimeout(() => heart.remove(), 2000);
-      }, 600);
+        // Criar 5 corações em sequência
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
+            const randomX = 450 + Math.random() * 100;
+            
+            heart.setAttribute('x', randomX);
+            heart.setAttribute('y', '150');
+            heart.setAttribute('font-size', '28');
+            heart.setAttribute('text-anchor', 'middle');
+            heart.textContent = randomHeart;
+            heart.classList.add('heart-float');
+            
+            container.appendChild(heart);
+            
+            // Remover após animação
+            setTimeout(() => heart.remove(), 2000);
+          }, i * 200);
+        }
+      }, 8000);
+      
+      // Criar primeira sequência imediatamente após 3 segundos
+      setTimeout(() => {
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
+            const randomX = 450 + Math.random() * 100;
+            
+            heart.setAttribute('x', randomX);
+            heart.setAttribute('y', '150');
+            heart.setAttribute('font-size', '28');
+            heart.setAttribute('text-anchor', 'middle');
+            heart.textContent = randomHeart;
+            heart.classList.add('heart-float');
+            
+            container.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 2000);
+          }, i * 200);
+        }
+      }, 3000);
     }
 
     // Iniciar animação de corações quando a página carregar
