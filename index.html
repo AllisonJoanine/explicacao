@@ -558,12 +558,31 @@
   <script src="script.js"></script>
   <script>
     let animationInterval = null;
+    let resetInterval = null;
+
+    function resetSVGAnimations() {
+      const svg = document.querySelector('.animation-svg');
+      if (!svg) return;
+      
+      // Remover e re-adicionar a classe para reiniciar as animações CSS
+      svg.style.animation = 'none';
+      setTimeout(() => {
+        svg.style.animation = '';
+      }, 10);
+    }
 
     function createFloatingHearts() {
       const hearts = ['❤️', '💚', '💙', '🧡', '💛'];
       const container = document.getElementById('hearts-container');
       if (!container) return;
       if (animationInterval) clearInterval(animationInterval);
+      if (resetInterval) clearInterval(resetInterval);
+      
+      // Reset da animação SVG a cada 7 segundos
+      resetInterval = setInterval(() => {
+        resetSVGAnimations();
+      }, 7000);
+      
       animationInterval = setInterval(() => {
         for (let i = 0; i < 5; i++) {
           setTimeout(() => {
@@ -581,6 +600,7 @@
           }, i * 200);
         }
       }, 7000);
+      
       for (let i = 0; i < 5; i++) {
         setTimeout(() => {
           const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
