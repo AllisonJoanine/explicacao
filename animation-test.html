@@ -67,10 +67,15 @@
       100% { transform: translateX(-150px); }
     }
 
-    @keyframes box-transfer {
-      0% { transform: translateX(-80px); }
-      50% { transform: translateX(0); }
-      100% { transform: translateX(80px); }
+    @keyframes box-with-person {
+      0% { transform: translateX(-150px); }
+      100% { transform: translateX(0); }
+    }
+
+    @keyframes box-transfer-up {
+      0% { transform: translateX(0) translateY(0); }
+      50% { transform: translateX(80px) translateY(0); }
+      100% { transform: translateX(80px) translateY(-80px); }
     }
 
     @keyframes stand-up {
@@ -108,25 +113,25 @@
 
     /* Aplicar animações */
     #person-left {
-      animation: walk-in 1s ease-in-out 0s forwards, walk-out 1s ease-in-out 7s forwards;
+      animation: walk-in 1.5s ease-in-out 0s forwards, walk-out 1s ease-in-out 6.5s forwards;
     }
 
-    #box-transfer {
-      animation: box-transfer 1s ease-in-out 1s forwards, stand-up 0.5s ease-in-out 1.5s forwards, celebrate 1s ease-in-out 3s forwards, stand-up 0.5s ease-in-out 7s reverse;
+    #box-with-person {
+      animation: box-with-person 1.5s ease-in-out 0s forwards, box-transfer-up 1s ease-in-out 1.5s forwards, walk-out 1s ease-in-out 6.5s forwards;
     }
 
     #person-right {
-      animation: stand-up 0.5s ease-in-out 1.5s forwards, celebrate 1s ease-in-out 3s forwards, stand-up 0.5s ease-in-out 7s reverse;
+      animation: stand-up 0.5s ease-in-out 1.5s forwards, celebrate 1s ease-in-out 2.5s forwards, stand-up 0.5s ease-in-out 6.5s reverse;
     }
 
     #arm-left-right {
       transform-origin: 485px 115px;
-      animation: arms-up 1s ease-in-out 3s forwards;
+      animation: arms-up 1s ease-in-out 2.5s forwards;
     }
 
     #arm-right-right {
       transform-origin: 515px 115px;
-      animation: arms-up-right 1s ease-in-out 3s forwards;
+      animation: arms-up-right 1s ease-in-out 2.5s forwards;
     }
 
     .heart-float {
@@ -207,8 +212,8 @@
           <line x1="100" y1="145" x2="100" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
         </g>
 
-        <!-- Caixa que se move entre os bonecos -->
-        <g id="box-transfer">
+        <!-- Caixa que acompanha o bonequinho e depois é entregue -->
+        <g id="box-with-person">
           <rect x="140" y="85" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
           <!-- Fita da caixa -->
           <rect x="140" y="105" width="50" height="4" fill="#FF5722" />
@@ -260,7 +265,7 @@
       const hearts = ['❤️', '💚', '💙', '🧡', '💛'];
       const container = document.getElementById('hearts-container');
       
-      // Criar corações a cada 8 segundos (no momento da comemoração)
+      // Criar corações a cada 7 segundos (no momento da comemoração)
       setInterval(() => {
         // Criar 5 corações em sequência
         for (let i = 0; i < 5; i++) {
@@ -270,7 +275,7 @@
             const randomX = 450 + Math.random() * 100;
             
             heart.setAttribute('x', randomX);
-            heart.setAttribute('y', '150');
+            heart.setAttribute('y', '100');
             heart.setAttribute('font-size', '28');
             heart.setAttribute('text-anchor', 'middle');
             heart.textContent = randomHeart;
@@ -282,9 +287,9 @@
             setTimeout(() => heart.remove(), 2000);
           }, i * 200);
         }
-      }, 8000);
+      }, 7000);
       
-      // Criar primeira sequência imediatamente após 3 segundos
+      // Criar primeira sequência imediatamente após 2.5 segundos
       setTimeout(() => {
         for (let i = 0; i < 5; i++) {
           setTimeout(() => {
@@ -293,7 +298,7 @@
             const randomX = 450 + Math.random() * 100;
             
             heart.setAttribute('x', randomX);
-            heart.setAttribute('y', '150');
+            heart.setAttribute('y', '100');
             heart.setAttribute('font-size', '28');
             heart.setAttribute('text-anchor', 'middle');
             heart.textContent = randomHeart;
@@ -304,7 +309,7 @@
             setTimeout(() => heart.remove(), 2000);
           }, i * 200);
         }
-      }, 3000);
+      }, 2500);
     }
 
     // Iniciar animação de corações quando a página carregar
