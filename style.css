@@ -1910,7 +1910,7 @@ i {
 }
 
 .water-level {
-  animation: waterFill 3s ease-in forwards;
+  animation: waterFill 1.2s ease-in forwards;
 }
 
 .wave {
@@ -2035,7 +2035,7 @@ body.page-loaded section:nth-of-type(6) {
     transform: translateY(200px);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(-200px);
   }
 }
 
