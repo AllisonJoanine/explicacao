@@ -22,10 +22,30 @@
   <div class="splash-screen" id="splashScreen">
     <div class="splash-content">
       <div class="splash-logo-container">
+        <svg class="water-fill" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- Fundo do círculo -->
+          <defs>
+            <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#8BC34A;stop-opacity:0.8" />
+              <stop offset="100%" style="stop-color:#4CAF50;stop-opacity:1" />
+            </linearGradient>
+            <clipPath id="logoClip">
+              <circle cx="100" cy="100" r="95" />
+            </clipPath>
+          </defs>
+          
+          <!-- Círculo de fundo -->
+          <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(139, 195, 74, 0.2)" stroke-width="2" />
+          
+          <!-- Água enchendo -->
+          <g clip-path="url(#logoClip)">
+            <rect class="water-level" x="0" y="200" width="200" height="200" fill="url(#waterGradient)" />
+            <path class="wave" d="M0,150 Q50,140 100,150 T200,150 L200,200 L0,200 Z" fill="#8BC34A" opacity="0.3" />
+            <path class="wave wave-delay" d="M0,155 Q50,145 100,155 T200,155 L200,200 L0,200 Z" fill="#7CB342" opacity="0.2" />
+          </g>
+        </svg>
         <img src="logo.png" alt="Instituto Galvão Azevedo" class="splash-logo" />
-        <div class="splash-loader"></div>
       </div>
-      
     </div>
   </div>
 

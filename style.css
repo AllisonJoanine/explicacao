@@ -1900,19 +1900,27 @@ i {
   transform: translate(-50%, -50%);
 }
 
-.splash-loader {
+.water-fill {
   position: absolute;
-  width: 240px;
-  height: 240px;
-  border: 3px solid rgba(139, 195, 74, 0.15);
-  border-top: 3px solid var(--green-light);
-  border-right: 3px solid var(--blue);
-  border-radius: 50%;
-  animation: loaderSpin 2s linear infinite, loaderPulse 2s ease-in-out infinite;
+  width: 200px;
+  height: 200px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 1;
+  filter: drop-shadow(0 10px 30px rgba(139, 195, 74, 0.3));
+}
+
+.water-level {
+  animation: waterFill 3s ease-in forwards;
+}
+
+.wave {
+  animation: waveMove 2s linear infinite;
+}
+
+.wave-delay {
+  animation: waveMove 2.5s linear infinite 0.5s;
 }
 
 .splash-title {
@@ -2019,5 +2027,25 @@ body.page-loaded section:nth-of-type(6) {
 
   .splash-subtitle {
     font-size: 1rem;
+  }
+}
+
+
+/* ===== WATER FILL ANIMATION ===== */
+@keyframes waterFill {
+  0% {
+    transform: translateY(200px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100px);
   }
 }
