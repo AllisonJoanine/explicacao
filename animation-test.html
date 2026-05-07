@@ -54,98 +54,6 @@
       height: auto;
     }
 
-    /* Animações */
-    @keyframes walk-right {
-      0% {
-        transform: translateX(-100px);
-      }
-      50% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-100px);
-      }
-    }
-
-    @keyframes walk-left {
-      0% {
-        transform: translateX(100px);
-      }
-      50% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(100px);
-      }
-    }
-
-    @keyframes box-move-right {
-      0% {
-        transform: translateX(-150px);
-      }
-      50% {
-        transform: translateX(50px);
-      }
-      100% {
-        transform: translateX(-150px);
-      }
-    }
-
-    @keyframes box-move-left {
-      0% {
-        transform: translateX(150px);
-      }
-      50% {
-        transform: translateX(-50px);
-      }
-      100% {
-        transform: translateX(150px);
-      }
-    }
-
-    @keyframes heart-rise {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-80px) scale(0.5);
-        opacity: 0;
-      }
-    }
-
-    .person-left {
-      animation: walk-right 4s ease-in-out infinite;
-    }
-
-    .person-right {
-      animation: walk-left 4s ease-in-out infinite;
-    }
-
-    .box-left {
-      animation: box-move-right 4s ease-in-out infinite;
-    }
-
-    .box-right {
-      animation: box-move-left 4s ease-in-out infinite;
-    }
-
-    .heart {
-      animation: heart-rise 2s ease-out infinite;
-    }
-
-    .heart:nth-child(1) {
-      animation-delay: 1s;
-    }
-
-    .heart:nth-child(2) {
-      animation-delay: 1.3s;
-    }
-
-    .heart:nth-child(3) {
-      animation-delay: 1.6s;
-    }
-
     .info {
       text-align: center;
       margin-top: 30px;
@@ -200,12 +108,25 @@
     
     <div class="animation-wrapper">
       <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <style>
+            @keyframes heart-rise {
+              0% { transform: translateY(0) scale(1); opacity: 1; }
+              100% { transform: translateY(-80px) scale(0.5); opacity: 0; }
+            }
+            .heart-anim { animation: heart-rise 2s ease-out infinite; }
+            .heart-1 { animation-delay: 1s; }
+            .heart-2 { animation-delay: 1.3s; }
+            .heart-3 { animation-delay: 1.6s; }
+          </style>
+        </defs>
+
         <!-- Fundo com chão -->
         <rect x="0" y="250" width="600" height="50" fill="#e8f5e9" />
         <line x1="0" y1="250" x2="600" y2="250" stroke="#4caf50" stroke-width="2" />
 
         <!-- Pessoa 1 (Esquerda - Entregador) -->
-        <g class="person-left">
+        <g id="person-left">
           <!-- Cabeça -->
           <circle cx="100" cy="80" r="20" fill="#FF9800" />
           <!-- Corpo -->
@@ -218,19 +139,37 @@
           <line x1="90" y1="145" x2="90" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
           <!-- Perna direita -->
           <line x1="100" y1="145" x2="100" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          
+          <!-- Animação de movimento -->
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            values="-100,0; 0,0; -100,0"
+            dur="4s"
+            repeatCount="indefinite"
+          />
         </g>
 
         <!-- Caixa (Esquerda) -->
-        <g class="box-left">
+        <g id="box-left">
           <rect x="140" y="85" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
           <!-- Fita da caixa -->
           <rect x="140" y="105" width="50" height="4" fill="#FF5722" />
           <!-- Laço -->
           <circle cx="165" cy="105" r="6" fill="#FF5722" />
+          
+          <!-- Animação de movimento -->
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            values="-150,0; 50,0; -150,0"
+            dur="4s"
+            repeatCount="indefinite"
+          />
         </g>
 
         <!-- Pessoa 2 (Direita - Recebedor) -->
-        <g class="person-right">
+        <g id="person-right">
           <!-- Cabeça -->
           <circle cx="500" cy="80" r="20" fill="#4CAF50" />
           <!-- Corpo -->
@@ -243,25 +182,43 @@
           <line x1="490" y1="145" x2="490" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
           <!-- Perna direita -->
           <line x1="500" y1="145" x2="500" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          
+          <!-- Animação de movimento -->
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            values="100,0; 0,0; 100,0"
+            dur="4s"
+            repeatCount="indefinite"
+          />
         </g>
 
         <!-- Caixa (Direita) -->
-        <g class="box-right">
+        <g id="box-right">
           <rect x="410" y="85" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
           <!-- Fita da caixa -->
           <rect x="410" y="105" width="50" height="4" fill="#FF5722" />
           <!-- Laço -->
           <circle cx="435" cy="105" r="6" fill="#FF5722" />
+          
+          <!-- Animação de movimento -->
+          <animateTransform
+            attributeName="transform"
+            type="translate"
+            values="150,0; -50,0; 150,0"
+            dur="4s"
+            repeatCount="indefinite"
+          />
         </g>
 
         <!-- Corações flutuando -->
-        <g class="heart">
+        <g class="heart-anim heart-1">
           <text x="300" y="120" font-size="30" text-anchor="middle">❤️</text>
         </g>
-        <g class="heart">
+        <g class="heart-anim heart-2">
           <text x="280" y="140" font-size="24" text-anchor="middle">💚</text>
         </g>
-        <g class="heart">
+        <g class="heart-anim heart-3">
           <text x="320" y="140" font-size="24" text-anchor="middle">💙</text>
         </g>
 
