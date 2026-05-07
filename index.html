@@ -422,48 +422,59 @@
         </div>
         <div class="contato-animation-wrapper">
           <div class="helping-animation">
-            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="animation-svg">
-              <!-- Pessoa sentada (recebendo ajuda) -->
-              <g class="person-sitting">
-                <!-- Cabeca -->
-                <circle cx="80" cy="100" r="20" fill="#FF9800" />
+            <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg" class="animation-svg">
+              <!-- Fundo com chão -->
+              <rect x="0" y="250" width="600" height="50" fill="#e8f5e9" />
+              <line x1="0" y1="250" x2="600" y2="250" stroke="#4caf50" stroke-width="2" />
+
+              <!-- Pessoa 1 (Esquerda - Entregador) -->
+              <g id="person-left">
+                <!-- Cabeça -->
+                <circle cx="150" cy="80" r="20" fill="#FF9800" />
                 <!-- Corpo -->
-                <rect x="65" y="125" width="30" height="40" rx="5" fill="#4CAF50" />
-                <!-- Pernas -->
-                <line x1="70" y1="165" x2="70" y2="200" stroke="#333" stroke-width="4" stroke-linecap="round" />
-                <line x1="80" y1="165" x2="80" y2="200" stroke="#333" stroke-width="4" stroke-linecap="round" />
+                <rect x="135" y="105" width="30" height="40" rx="5" fill="#2196F3" />
+                <!-- Braço esquerdo -->
+                <line x1="135" y1="115" x2="110" y2="90" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+                <!-- Braço direito (estendido) -->
+                <line x1="165" y1="115" x2="200" y2="100" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+                <!-- Perna esquerda -->
+                <line x1="140" y1="145" x2="140" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+                <!-- Perna direita -->
+                <line x1="150" y1="145" x2="150" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
               </g>
 
-              <!-- Bonequinho ajudador -->
-              <g class="helper-person">
-                <!-- Cabeca -->
-                <circle cx="280" cy="100" r="20" fill="#2196F3" />
-                <!-- Corpo -->
-                <rect x="265" y="125" width="30" height="40" rx="5" fill="#FF6B6B" />
-                <!-- Braco esquerdo (levantado) -->
-                <line x1="265" y1="135" x2="240" y2="110" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
-                <!-- Braco direito (segurando caixa) -->
-                <line x1="295" y1="135" x2="320" y2="120" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
-                <!-- Pernas -->
-                <line x1="270" y1="165" x2="270" y2="200" stroke="#333" stroke-width="4" stroke-linecap="round" />
-                <line x1="280" y1="165" x2="280" y2="200" stroke="#333" stroke-width="4" stroke-linecap="round" />
-              </g>
-
-              <!-- Caixa de ajuda -->
-              <g class="help-box">
-                <rect x="310" y="100" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
+              <!-- Caixa na mão do entregador -->
+              <g id="box-with-person">
+                <rect x="195" y="80" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
                 <!-- Fita da caixa -->
-                <rect x="310" y="115" width="50" height="4" fill="#FF5722" />
-                <!-- Laco -->
-                <circle cx="335" cy="115" r="6" fill="#FF5722" />
+                <rect x="195" y="100" width="50" height="4" fill="#FF5722" />
+                <!-- Laço -->
+                <circle cx="220" cy="100" r="6" fill="#FF5722" />
               </g>
 
-              <!-- Coracoes flutuando -->
-              <g class="floating-hearts">
-                <text x="150" y="60" font-size="24" class="heart-float">❤️</text>
-                <text x="180" y="80" font-size="20" class="heart-float" style="animation-delay: 0.3s">💚</text>
-                <text x="120" y="90" font-size="18" class="heart-float" style="animation-delay: 0.6s">💙</text>
+              <!-- Pessoa 2 (Direita - Recebedor) - SENTADO INICIALMENTE -->
+              <g id="person-right">
+                <!-- Cabeça -->
+                <circle cx="350" cy="120" r="20" fill="#4CAF50" />
+                <!-- Corpo (sentado) -->
+                <rect x="335" y="145" width="30" height="35" rx="5" fill="#FF6B6B" />
+                <!-- Braço esquerdo (recebendo) -->
+                <line id="arm-left-right" x1="335" y1="155" x2="300" y2="130" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+                <!-- Braço direito -->
+                <line id="arm-right-right" x1="365" y1="155" x2="390" y2="130" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+                <!-- Perna esquerda (sentado) -->
+                <line x1="340" y1="180" x2="340" y2="210" stroke="#333" stroke-width="4" stroke-linecap="round" />
+                <!-- Perna direita (sentado) -->
+                <line x1="350" y1="180" x2="350" y2="210" stroke="#333" stroke-width="4" stroke-linecap="round" />
               </g>
+
+              <!-- Container para corações -->
+              <g id="hearts-container"></g>
+
+              <!-- Texto no centro -->
+              <text x="300" y="230" font-size="18" text-anchor="middle" fill="#333" font-weight="bold">
+                Ajudando Sem Julgar
+              </text>
             </svg>
           </div>
           <div class="animation-text">
@@ -545,5 +556,63 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Criar corações flutuantes no momento da comemoração
+    function createFloatingHearts() {
+      const hearts = ['❤️', '💚', '💙', '🧡', '💛'];
+      const container = document.getElementById('hearts-container');
+      
+      if (!container) return;
+      
+      // Criar corações a cada 7 segundos (no momento da comemoração)
+      setInterval(() => {
+        // Criar 5 corações em sequência
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
+            const randomX = 300 + Math.random() * 100;
+            
+            heart.setAttribute('x', randomX);
+            heart.setAttribute('y', '100');
+            heart.setAttribute('font-size', '28');
+            heart.setAttribute('text-anchor', 'middle');
+            heart.textContent = randomHeart;
+            heart.classList.add('heart-float');
+            
+            container.appendChild(heart);
+            
+            // Remover após animação
+            setTimeout(() => heart.remove(), 2000);
+          }, i * 200);
+        }
+      }, 7000);
+      
+      // Criar primeira sequência imediatamente após 2.5 segundos
+      setTimeout(() => {
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
+            const randomX = 300 + Math.random() * 100;
+            
+            heart.setAttribute('x', randomX);
+            heart.setAttribute('y', '100');
+            heart.setAttribute('font-size', '28');
+            heart.setAttribute('text-anchor', 'middle');
+            heart.textContent = randomHeart;
+            heart.classList.add('heart-float');
+            
+            container.appendChild(heart);
+            
+            setTimeout(() => heart.remove(), 2000);
+          }, i * 200);
+        }
+      }, 2500);
+    }
+
+    // Iniciar animação de corações quando a página carregar
+    window.addEventListener('load', createFloatingHearts);
+  </script>
 </body>
 </html>
