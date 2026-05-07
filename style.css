@@ -1892,12 +1892,10 @@ i {
   object-position: center;
   animation: logoScale 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   filter: drop-shadow(0 10px 30px rgba(139, 195, 74, 0.3));
-  display: block;
   position: relative;
-  z-index: 3;
+  z-index: 2;
   margin: auto;
 }
-
 .water-fill {
   position: absolute;
   width: 200px;
@@ -1905,7 +1903,8 @@ i {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 3;
+  opacity: 0.4;
   filter: drop-shadow(0 10px 30px rgba(139, 195, 74, 0.3));
 }
 
