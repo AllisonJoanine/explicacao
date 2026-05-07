@@ -557,32 +557,12 @@
 
   <script src="script.js"></script>
   <script>
-    let animationTimeout = null;
     let animationInterval = null;
-
-    function restartSVGAnimations() {
-      const svg = document.querySelector('.animation-svg');
-      if (!svg) return;
-      svg.style.animation = 'none';
-      setTimeout(() => { svg.style.animation = ''; }, 10);
-      const personLeft = document.getElementById('person-left');
-      const boxWithPerson = document.getElementById('box-with-person');
-      const personRight = document.getElementById('person-right');
-      const armLeftRight = document.getElementById('arm-left-right');
-      const armRightRight = document.getElementById('arm-right-right');
-      [personLeft, boxWithPerson, personRight, armLeftRight, armRightRight].forEach(el => {
-        if (el) {
-          el.style.animation = 'none';
-          setTimeout(() => { el.style.animation = ''; }, 10);
-        }
-      });
-    }
 
     function createFloatingHearts() {
       const hearts = ['❤️', '💚', '💙', '🧡', '💛'];
       const container = document.getElementById('hearts-container');
       if (!container) return;
-      if (animationTimeout) clearTimeout(animationTimeout);
       if (animationInterval) clearInterval(animationInterval);
       animationInterval = setInterval(() => {
         for (let i = 0; i < 5; i++) {
@@ -601,42 +581,25 @@
           }, i * 200);
         }
       }, 7000);
-      animationTimeout = setTimeout(() => {
-        for (let i = 0; i < 5; i++) {
-          setTimeout(() => {
-            const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
-            const randomX = 300 + Math.random() * 100;
-            heart.setAttribute('x', randomX);
-            heart.setAttribute('y', '100');
-            heart.setAttribute('font-size', '28');
-            heart.setAttribute('text-anchor', 'middle');
-            heart.textContent = randomHeart;
-            heart.classList.add('heart-float');
-            container.appendChild(heart);
-            setTimeout(() => heart.remove(), 2000);
-          }, i * 200);
-        }
-      }, 2500);
-    }
-
-    function setupAnimationObserver() {
-      const animationContainer = document.querySelector('.helping-animation');
-      if (!animationContainer) return;
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            restartSVGAnimations();
-            createFloatingHearts();
-          }
-        });
-      }, { threshold: 0.5 });
-      observer.observe(animationContainer);
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
+          const randomX = 300 + Math.random() * 100;
+          heart.setAttribute('x', randomX);
+          heart.setAttribute('y', '100');
+          heart.setAttribute('font-size', '28');
+          heart.setAttribute('text-anchor', 'middle');
+          heart.textContent = randomHeart;
+          heart.classList.add('heart-float');
+          container.appendChild(heart);
+          setTimeout(() => heart.remove(), 2000);
+        }, i * 200);
+      }
     }
 
     window.addEventListener('load', () => {
       createFloatingHearts();
-      setupAnimationObserver();
     });
   </script>
 </body>
