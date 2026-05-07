@@ -1872,27 +1872,32 @@ i {
 }
 
 .splash-logo-container {
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 260px;
   height: 260px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: visible;
+  z-index: 9999;
 }
 
 .splash-logo {
   width: 200px;
   height: 200px;
   object-fit: contain;
-  object-position: center center;
+  object-position: center;
   animation: logoScale 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   filter: drop-shadow(0 10px 30px rgba(139, 195, 74, 0.3));
   display: block;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .splash-loader {
@@ -1907,7 +1912,7 @@ i {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  z-index: 1;
 }
 
 .splash-title {
