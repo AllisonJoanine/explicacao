@@ -58,24 +58,24 @@
 
     /* Animações */
     @keyframes walk-in {
-      0% { transform: translateX(-150px); }
+      0% { transform: translateX(-200px); }
       100% { transform: translateX(0); }
     }
 
     @keyframes walk-out {
       0% { transform: translateX(0); }
-      100% { transform: translateX(-150px); }
+      100% { transform: translateX(-200px); }
     }
 
     @keyframes box-with-person {
-      0% { transform: translateX(-150px); }
+      0% { transform: translateX(-200px); }
       100% { transform: translateX(0); }
     }
 
     @keyframes box-transfer-up {
       0% { transform: translateX(0) translateY(0); }
-      50% { transform: translateX(80px) translateY(0); }
-      100% { transform: translateX(80px) translateY(-80px); }
+      50% { transform: translateX(50px) translateY(0); }
+      100% { transform: translateX(50px) translateY(-80px); }
     }
 
     @keyframes stand-up {
@@ -125,12 +125,12 @@
     }
 
     #arm-left-right {
-      transform-origin: 485px 115px;
+      transform-origin: 420px 115px;
       animation: arms-up 1s ease-in-out 2.5s forwards;
     }
 
     #arm-right-right {
-      transform-origin: 515px 115px;
+      transform-origin: 450px 115px;
       animation: arms-up-right 1s ease-in-out 2.5s forwards;
     }
 
@@ -199,42 +199,42 @@
         <!-- Pessoa 1 (Esquerda - Entregador) -->
         <g id="person-left">
           <!-- Cabeça -->
-          <circle cx="100" cy="80" r="20" fill="#FF9800" />
+          <circle cx="150" cy="80" r="20" fill="#FF9800" />
           <!-- Corpo -->
-          <rect x="85" y="105" width="30" height="40" rx="5" fill="#2196F3" />
+          <rect x="135" y="105" width="30" height="40" rx="5" fill="#2196F3" />
           <!-- Braço esquerdo -->
-          <line x1="85" y1="115" x2="60" y2="90" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <line x1="135" y1="115" x2="110" y2="90" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
           <!-- Braço direito (estendido) -->
-          <line x1="115" y1="115" x2="150" y2="100" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <line x1="165" y1="115" x2="200" y2="100" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
           <!-- Perna esquerda -->
-          <line x1="90" y1="145" x2="90" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          <line x1="140" y1="145" x2="140" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
           <!-- Perna direita -->
-          <line x1="100" y1="145" x2="100" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          <line x1="150" y1="145" x2="150" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
         </g>
 
         <!-- Caixa que acompanha o bonequinho e depois é entregue -->
         <g id="box-with-person">
-          <rect x="140" y="85" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
+          <rect x="190" y="85" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
           <!-- Fita da caixa -->
-          <rect x="140" y="105" width="50" height="4" fill="#FF5722" />
+          <rect x="190" y="105" width="50" height="4" fill="#FF5722" />
           <!-- Laço -->
-          <circle cx="165" cy="105" r="6" fill="#FF5722" />
+          <circle cx="215" cy="105" r="6" fill="#FF5722" />
         </g>
 
         <!-- Pessoa 2 (Direita - Recebedor) - SENTADO INICIALMENTE -->
         <g id="person-right">
           <!-- Cabeça -->
-          <circle cx="500" cy="120" r="20" fill="#4CAF50" />
+          <circle cx="380" cy="120" r="20" fill="#4CAF50" />
           <!-- Corpo (sentado) -->
-          <rect x="485" y="145" width="30" height="35" rx="5" fill="#FF6B6B" />
+          <rect x="365" y="145" width="30" height="35" rx="5" fill="#FF6B6B" />
           <!-- Braço esquerdo (recebendo) -->
-          <line id="arm-left-right" x1="485" y1="155" x2="450" y2="130" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <line id="arm-left-right" x1="365" y1="155" x2="330" y2="130" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
           <!-- Braço direito -->
-          <line id="arm-right-right" x1="515" y1="155" x2="540" y2="130" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <line id="arm-right-right" x1="395" y1="155" x2="420" y2="130" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
           <!-- Perna esquerda (sentado) -->
-          <line x1="490" y1="180" x2="490" y2="210" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          <line x1="370" y1="180" x2="370" y2="210" stroke="#333" stroke-width="4" stroke-linecap="round" />
           <!-- Perna direita (sentado) -->
-          <line x1="500" y1="180" x2="500" y2="210" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          <line x1="380" y1="180" x2="380" y2="210" stroke="#333" stroke-width="4" stroke-linecap="round" />
         </g>
 
         <!-- Container para corações -->
@@ -272,7 +272,7 @@
           setTimeout(() => {
             const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
-            const randomX = 450 + Math.random() * 100;
+            const randomX = 330 + Math.random() * 100;
             
             heart.setAttribute('x', randomX);
             heart.setAttribute('y', '100');
@@ -295,7 +295,7 @@
           setTimeout(() => {
             const heart = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             const randomHeart = hearts[Math.floor(Math.random() * hearts.length)];
-            const randomX = 450 + Math.random() * 100;
+            const randomX = 330 + Math.random() * 100;
             
             heart.setAttribute('x', randomX);
             heart.setAttribute('y', '100');
