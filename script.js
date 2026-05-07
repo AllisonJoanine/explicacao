@@ -1,4 +1,23 @@
 // ===== NAVBAR SCROLL =====
+// ===== SPLASH SCREEN =====
+window.addEventListener('load', () => {
+  const splashScreen = document.getElementById('splashScreen');
+  
+  // Mostrar splash por 3 segundos
+  setTimeout(() => {
+    splashScreen.style.animation = 'splashFadeOut 1s ease-in-out forwards';
+    document.body.classList.add('page-loaded');
+    
+    // Remover splash do DOM após animação
+    setTimeout(() => {
+      splashScreen.classList.add('hidden');
+    }, 1000);
+  }, 2500);
+});
+
+// Adicionar classe de carregamento no body
+document.body.classList.add('page-loading');
+
 const navbar = document.getElementById('navbar');
 const backToTop = document.getElementById('backToTop');
 
