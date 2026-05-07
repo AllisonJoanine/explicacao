@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animação de Entrega - Instituto Galvão Azevedo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 800px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 2rem;
+    }
+
+    .animation-wrapper {
+      background: linear-gradient(to bottom, #f0f4ff, #ffffff);
+      border-radius: 15px;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 400px;
+      border: 2px solid #e0e0e0;
+    }
+
+    svg {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+    }
+
+    /* Animações */
+    @keyframes walk-right {
+      0% {
+        transform: translateX(-100px);
+      }
+      50% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100px);
+      }
+    }
+
+    @keyframes walk-left {
+      0% {
+        transform: translateX(100px);
+      }
+      50% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100px);
+      }
+    }
+
+    @keyframes box-move-right {
+      0% {
+        transform: translateX(-150px);
+      }
+      50% {
+        transform: translateX(50px);
+      }
+      100% {
+        transform: translateX(-150px);
+      }
+    }
+
+    @keyframes box-move-left {
+      0% {
+        transform: translateX(150px);
+      }
+      50% {
+        transform: translateX(-50px);
+      }
+      100% {
+        transform: translateX(150px);
+      }
+    }
+
+    @keyframes heart-rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-80px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .person-left {
+      animation: walk-right 4s ease-in-out infinite;
+    }
+
+    .person-right {
+      animation: walk-left 4s ease-in-out infinite;
+    }
+
+    .box-left {
+      animation: box-move-right 4s ease-in-out infinite;
+    }
+
+    .box-right {
+      animation: box-move-left 4s ease-in-out infinite;
+    }
+
+    .heart {
+      animation: heart-rise 2s ease-out infinite;
+    }
+
+    .heart:nth-child(1) {
+      animation-delay: 1s;
+    }
+
+    .heart:nth-child(2) {
+      animation-delay: 1.3s;
+    }
+
+    .heart:nth-child(3) {
+      animation-delay: 1.6s;
+    }
+
+    .info {
+      text-align: center;
+      margin-top: 30px;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .info p {
+      margin: 10px 0;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .animation-wrapper {
+        padding: 20px;
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎁 Animação de Entrega</h1>
+    
+    <div class="animation-wrapper">
+      <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Fundo com chão -->
+        <rect x="0" y="250" width="600" height="50" fill="#e8f5e9" />
+        <line x1="0" y1="250" x2="600" y2="250" stroke="#4caf50" stroke-width="2" />
+
+        <!-- Pessoa 1 (Esquerda - Entregador) -->
+        <g class="person-left">
+          <!-- Cabeça -->
+          <circle cx="100" cy="80" r="20" fill="#FF9800" />
+          <!-- Corpo -->
+          <rect x="85" y="105" width="30" height="40" rx="5" fill="#2196F3" />
+          <!-- Braço esquerdo -->
+          <line x1="85" y1="115" x2="60" y2="90" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <!-- Braço direito (estendido) -->
+          <line x1="115" y1="115" x2="150" y2="100" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <!-- Perna esquerda -->
+          <line x1="90" y1="145" x2="90" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          <!-- Perna direita -->
+          <line x1="100" y1="145" x2="100" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+        </g>
+
+        <!-- Caixa (Esquerda) -->
+        <g class="box-left">
+          <rect x="140" y="85" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
+          <!-- Fita da caixa -->
+          <rect x="140" y="105" width="50" height="4" fill="#FF5722" />
+          <!-- Laço -->
+          <circle cx="165" cy="105" r="6" fill="#FF5722" />
+        </g>
+
+        <!-- Pessoa 2 (Direita - Recebedor) -->
+        <g class="person-right">
+          <!-- Cabeça -->
+          <circle cx="500" cy="80" r="20" fill="#4CAF50" />
+          <!-- Corpo -->
+          <rect x="485" y="105" width="30" height="40" rx="5" fill="#FF6B6B" />
+          <!-- Braço esquerdo (recebendo) -->
+          <line x1="485" y1="115" x2="450" y2="100" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <!-- Braço direito -->
+          <line x1="515" y1="115" x2="540" y2="90" stroke="#FF9800" stroke-width="4" stroke-linecap="round" />
+          <!-- Perna esquerda -->
+          <line x1="490" y1="145" x2="490" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+          <!-- Perna direita -->
+          <line x1="500" y1="145" x2="500" y2="180" stroke="#333" stroke-width="4" stroke-linecap="round" />
+        </g>
+
+        <!-- Caixa (Direita) -->
+        <g class="box-right">
+          <rect x="410" y="85" width="50" height="45" rx="3" fill="#8BC34A" stroke="#7CB342" stroke-width="2" />
+          <!-- Fita da caixa -->
+          <rect x="410" y="105" width="50" height="4" fill="#FF5722" />
+          <!-- Laço -->
+          <circle cx="435" cy="105" r="6" fill="#FF5722" />
+        </g>
+
+        <!-- Corações flutuando -->
+        <g class="heart">
+          <text x="300" y="120" font-size="30" text-anchor="middle">❤️</text>
+        </g>
+        <g class="heart">
+          <text x="280" y="140" font-size="24" text-anchor="middle">💚</text>
+        </g>
+        <g class="heart">
+          <text x="320" y="140" font-size="24" text-anchor="middle">💙</text>
+        </g>
+
+        <!-- Texto no centro -->
+        <text x="300" y="230" font-size="18" text-anchor="middle" fill="#333" font-weight="bold">
+          Ajudando Sem Julgar
+        </text>
+      </svg>
+    </div>
+
+    <div class="info">
+      <p><strong>Instituto Galvão Azevedo</strong></p>
+      <p>Uma ONG que une forças para apoiar outras organizações sociais</p>
+    </div>
+
+    <div class="btn-container">
+      <button class="btn" onclick="window.location.href='index.html'">
+        ← Voltar ao Site
+      </button>
+    </div>
+  </div>
+</body>
+</html>
